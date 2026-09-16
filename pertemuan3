@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taksonomi Media Pembelajaran | Teknologi Pendidikan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        edu: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#074e73',
+                            900: '#0c3d59',
+                        },
+                        academic: {
+                            gold: '#d97706',
+                            emerald: '#059669',
+                            purple: '#7c3aed',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #0c3d59 0%, #0369a1 60%, #0284c7 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-edu-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2.5 bg-edu-700 text-white rounded-xl shadow-sm">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg text-slate-900 block leading-tight">EduTaksonomi TP</span>
+                        <span class="text-xs text-edu-600 font-semibold uppercase tracking-wider">Jurusan Teknologi Pendidikan</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
+                    <a href="#pengantar" class="hover:text-edu-600 transition-colors">Pengantar</a>
+                    <a href="#ahli" class="hover:text-edu-600 transition-colors">10 Taksonomi Ahli</a>
+                    <a href="#simulator" class="hover:text-edu-600 transition-colors text-edu-600 font-bold flex items-center">
+                        <i data-lucide="sparkles" class="w-4 h-4 mr-1"></i> Simulator Analisis
+                    </a>
+                    <a href="#matriks" class="hover:text-edu-600 transition-colors">Matriks Perbandingan</a>
+                    <a href="#kuis" class="hover:text-edu-600 transition-colors px-3 py-1.5 bg-edu-50 text-edu-700 rounded-lg border border-edu-200">Kuis Evaluasi</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#pengantar" class="block py-2 text-slate-700 hover:text-edu-600">Pengantar</a>
+            <a href="#ahli" class="block py-2 text-slate-700 hover:text-edu-600">10 Taksonomi Ahli</a>
+            <a href="#simulator" class="block py-2 text-edu-600 font-bold">Simulator Analisis Media</a>
+            <a href="#matriks" class="block py-2 text-slate-700 hover:text-edu-600">Matriks Perbandingan</a>
+            <a href="#kuis" class="block py-2 text-slate-700 hover:text-edu-600 font-semibold">Kuis Evaluasi</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 sm:py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8">
+                    <span class="inline-flex items-center space-x-2 px-3.5 py-1 bg-white/15 backdrop-blur-md border border-white/20 rounded-full text-xs font-semibold tracking-wide uppercase mb-4 text-edu-100">
+                        <i data-lucide="book-marked" class="w-4 h-4"></i>
+                        <span>Modul Perkuliahan Media Pembelajaran</span>
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-6">
+                        Taksonomi & Klasifikasi <br class="hidden sm:inline"><span class="text-amber-300">Media Pembelajaran</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-edu-100 mb-8 leading-relaxed max-w-2xl">
+                        Rangkuman komprehensif dan sintesis kritis klasifikasi media pembelajaran berdasarkan <strong>10 Tokoh & Ahli Teknologi Pendidikan Utama</strong>: Rudy Bretz, Ronald Anderson, Kemp & Dayton, Wilbur Schramm, Leshin et al., Heinich et al., Seels & Glasgow, Punaji Setyosari, Gerlach & Ely, serta Jerrold Kemp.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#ahli" class="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold rounded-xl shadow-lg transition flex items-center space-x-2">
+                            <span>Jelajahi 10 Taksonomi</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#simulator" class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/30 backdrop-blur-sm transition flex items-center space-x-2">
+                            <i data-lucide="play" class="w-4 h-4"></i>
+                            <span>Coba Simulator Media</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dosen Info Card -->
+                <div class="lg:col-span-4 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl text-white">
+                    <div class="flex items-center space-x-3 border-b border-white/20 pb-4 mb-4">
+                        <div class="p-3 bg-amber-400 text-slate-900 rounded-xl font-bold">
+                            <i data-lucide="user-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-bold text-amber-300">Portal Pengajaran Dosen</h2>
+                            <p class="text-xs text-edu-100">Jurusan Teknologi Pendidikan</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-edu-100">
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 text-amber-300"></i> Standar Kurikulum S1 Teknologi Pendidikan</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 text-amber-300"></i> Analisis Komparatif Indera & Teknologi</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 text-amber-300"></i> Latihan Soal HOTS & Studi Kasus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- SECTION: Pengantar Konseptual -->
+        <section id="pengantar" class="scroll-mt-20">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="p-2 bg-edu-100 text-edu-700 rounded-lg font-bold"><i data-lucide="compass" class="w-6 h-6"></i></span>
+                    <h2 class="text-2xl font-bold text-slate-900">Mengapa Taksonomi Media Penting dalam Teknologi Pendidikan?</h2>
+                </div>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+                    Dalam disiplin **Teknologi Pendidikan**, taksonomi media bukan sekadar pengelompokan fisik, melainkan **kerangka berpikir metodologis** untuk membantu desainer pembelajaran (*instructional designer*) dan pendidik dalam memilih, mengembangkan, serta mengintegrasikan saluran komunikasi yang paling presisi sesuai karakteristik pebelajar, tujuan instruksional, serta kondisi lingkungan belajar.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-900 text-sm mb-1 flex items-center">
+                            <i data-lucide="layers" class="w-4 h-4 text-edu-600 mr-2"></i> Landasan Rangsangan Indera
+                        </h3>
+                        <p class="text-xs text-slate-600">Mengaitkan stimulus auditori, visual, dan kinestetik dengan proses pengolahan kognitif peserta didik.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-900 text-sm mb-1 flex items-center">
+                            <i data-lucide="cpu" class="w-4 h-4 text-edu-600 mr-2"></i> Keterjangkauan Teknologi
+                        </h3>
+                        <p class="text-xs text-slate-600">Memilih media berdasarkan kompleksitas transmisi, produksi, dan kepraktisan di lapangan.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-900 text-sm mb-1 flex items-center">
+                            <i data-lucide="target" class="w-4 h-4 text-edu-600 mr-2"></i> Efektivitas Instruksional
+                        </h3>
+                        <p class="text-xs text-slate-600">Memastikan kesesuaian antara domain hasil belajar (kognitif, afektif, psikomotorik) dengan karakteristik media.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Taksonomi 10 Ahli -->
+        <section id="ahli" class="scroll-mt-20">
+            <div class="border-l-4 border-edu-600 pl-4 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Klasifikasi Media Berdasarkan 10 Taksonomi Ahli</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Pilih tab tokoh untuk mempelajari landasan teori, atribut, serta pembagian kategori media menurut para pakar.</p>
+            </div>
+
+            <!-- Tab Navigation for 10 Experts -->
+            <div class="flex items-center space-x-2 overflow-x-auto pb-4 custom-scrollbar">
+                <button onclick="showExpert('bretz')" id="btn-bretz" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-edu-600 text-white shadow-sm">
+                    1. Rudy Bretz
+                </button>
+                <button onclick="showExpert('anderson')" id="btn-anderson" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    2. Ronald Anderson
+                </button>
+                <button onclick="showExpert('kempdayton')" id="btn-kempdayton" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    3. Kemp & Dayton
+                </button>
+                <button onclick="showExpert('schramm')" id="btn-schramm" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    4. Wilbur Schramm
+                </button>
+                <button onclick="showExpert('leshin')" id="btn-leshin" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    5. Leshin et al.
+                </button>
+                <button onclick="showExpert('heinich')" id="btn-heinich" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    6. Heinich et al.
+                </button>
+                <button onclick="showExpert('seels')" id="btn-seels" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    7. Seels & Glasgow
+                </button>
+                <button onclick="showExpert('setyosari')" id="btn-setyosari" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    8. Punaji Setyosari
+                </button>
+                <button onclick="showExpert('gerlach')" id="btn-gerlach" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    9. Gerlach & Ely
+                </button>
+                <button onclick="showExpert('jkemp')" id="btn-jkemp" class="expert-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    10. Jerrold Kemp
+                </button>
+            </div>
+
+            <!-- EXPERT 1: Rudy Bretz -->
+            <div id="expert-bretz" class="expert-content bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 01</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Rudy Bretz (1971)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: 3 Unsur Utama Indera (Suara, Visual, Gerak)</p>
+                    </div>
+                    <span class="px-3 py-1 bg-edu-100 text-edu-800 font-bold text-xs rounded-full">8 Kelompok Utama Media</span>
+                </div>
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    Rudy Bretz mengidentifikasi media berdasarkan 3 unsur karakteristik pokok: **Suara (Audio)**, **Visual (Gambar)**, dan **Gerak (Motion)**. Selain itu, Bretz membedakan visual menjadi visual diam (*still*) dan visual gerak (*motion*), serta membagi media menjadi saluran penyiaran (*telecommunication*) dan perekaman (*recording*).
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse">
+                        <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-xs">
+                            <tr>
+                                <th class="p-3">No</th>
+                                <th class="p-3">Kelompok Media</th>
+                                <th class="p-3">Unsur Pembentuk</th>
+                                <th class="p-3">Contoh Implementasi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">1</td><td class="p-3 font-semibold text-slate-900">Audio-Visual Gerak</td><td class="p-3">Suara + Visual + Gerak</td><td class="p-3">Film bersuara, Video MP4, TV, Animasi bersuara</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">2</td><td class="p-3 font-semibold text-slate-900">Audio-Visual Diam</td><td class="p-3">Suara + Visual Diam</td><td class="p-3">Slide bersuara (*Sound-Slide*), Filmstrip audio</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">3</td><td class="p-3 font-semibold text-slate-900">Audio Semi-Gerak</td><td class="p-3">Suara + Tulisan/Garis Bergerak</td><td class="p-3">Telewriting, Papan Tulis Elektronik Real-time</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">4</td><td class="p-3 font-semibold text-slate-900">Visual Gerak</td><td class="p-3">Visual + Gerak (Tanpa Suara)</td><td class="p-3">Film bisu, GIF animasi instruksional</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">5</td><td class="p-3 font-semibold text-slate-900">Visual Diam</td><td class="p-3">Visual Diam (Tanpa Suara)</td><td class="p-3">Foto, Poster, Infografis, OHP, Slide Bisu</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">6</td><td class="p-3 font-semibold text-slate-900">Visual Semi-Gerak</td><td class="p-3">Visual Bergerak Terbatas</td><td class="p-3">Teleautograph, Faksimili interaktif</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">7</td><td class="p-3 font-semibold text-slate-900">Audio</td><td class="p-3">Hanya Suara</td><td class="p-3">Radio, Podcast, Rekaman MP3, Cassette</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-3 font-bold">8</td><td class="p-3 font-semibold text-slate-900">Cetak</td><td class="p-3">Simbol Visual Tertulis</td><td class="p-3">Buku teks, Modul cetak, Brosur, Handout</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- EXPERT 2: Ronald Anderson -->
+            <div id="expert-anderson" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 02</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Ronald H. Anderson (1976)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Formasi Fisik, Teknologi Transmisi & Sajian</p>
+                    </div>
+                    <span class="px-3 py-1 bg-amber-100 text-amber-800 font-bold text-xs rounded-full">10 Kelompok Media</span>
+                </div>
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    Anderson membagi media pembelajaran ke dalam 10 kelompok operasional yang berfokus pada kemudahan praktis dan media fisik yang digunakan dalam instruksi kelas:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">1. Audio</strong><p class="text-xs text-slate-600">Kaset, Radio, CD Audio</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">2. Cetak</strong><p class="text-xs text-slate-600">Buku Ajar, Modul, LKS</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">3. Cetak-Audio</strong><p class="text-xs text-slate-600">Buku Bergambar + Pita Audio</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">4. Visual Diam</strong><p class="text-xs text-slate-600">OHP, Slide Transparansi</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">5. Visual Diam Audio</strong><p class="text-xs text-slate-600">Slide Sync + Suara</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">6. Visual Gerak</strong><p class="text-xs text-slate-600">Film Bisu, Animasi tanpa suara</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">7. Visual Gerak Audio</strong><p class="text-xs text-slate-600">Video Pembelajaran, DVD</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">8. Objek Fisik/Realia</strong><p class="text-xs text-slate-600">Model 3D, Mock-up, Maket</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">9. Manusia & Lingkungan</strong><p class="text-xs text-slate-600">Narasumber, Field Trip</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-edu-700 block text-xs font-bold mb-1">10. Komputer</strong><p class="text-xs text-slate-600">CAI, Software Simulasi</p></div>
+                </div>
+            </div>
+
+            <!-- EXPERT 3: Kemp & Dayton -->
+            <div id="expert-kempdayton" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 03</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Kemp & Dayton (1985)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Karakteristik Pembuatan & Format Penyampaian</p>
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full">8 Kelompok Praktis</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">1. Media Cetak (*Printed Media*)</h4>
+                        <p class="text-xs text-slate-600">Modul, panduan belajar, buku acuan, teks terprogram.</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">2. Media Pajang (*Display Media*)</h4>
+                        <p class="text-xs text-slate-600">Papan tulis, papan flanel, papan buletin, poster pameran.</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">3. Transparansi Overhead (OHP)</h4>
+                        <p class="text-xs text-slate-600">Lembar transparansi plastik untuk presentasi tatap muka.</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">4. Rekaman Audio</h4>
+                        <p class="text-xs text-slate-600">Pita kaset, disk suara, file audio instruksional.</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">5. Seri Slide & Filmstrip</h4>
+                        <p class="text-xs text-slate-600">Gambar proyeksi fotografi serial untuk urutan langkah.</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">6. Penyajian Multi-Gambar</h4>
+                        <p class="text-xs text-slate-600">Proyeksi sinkronik beberapa layar gabungan.</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">7. Video & Film Gerak</h4>
+                        <p class="text-xs text-slate-600">Rekaman live action, animasi gerakan cepat, rekaman acara TV.</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl hover:border-edu-300 transition">
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">8. Pembelajaran Komputer</h4>
+                        <p class="text-xs text-slate-600">CBI, Interaktif berbasis perangkat lunak & simulasi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERT 4: Wilbur Schramm -->
+            <div id="expert-schramm" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 04</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Wilbur Schramm (1977)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Kerumitan/Biaya (*Big vs Little Media*) & Daya Liput Jangkauan</p>
+                    </div>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 font-bold text-xs rounded-full">Kategori Dikotomi & Jangkauan</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl border border-amber-200">
+                        <h4 class="font-bold text-amber-900 text-base mb-2">1. Menurut Kompleksitas & Biaya</h4>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded-lg border border-amber-200">
+                                <strong class="text-xs text-amber-800 uppercase block font-bold">Big Media (Media Besar / Rumit)</strong>
+                                <p class="text-xs text-slate-600 mt-1">Biaya produksi mahal, butuh fasilitas canggih. Contoh: Televisi, Film bersuara, Sistem Komputer Kompleks.</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-amber-200">
+                                <strong class="text-xs text-amber-800 uppercase block font-bold">Little Media (Media Sederhana / Kecil)</strong>
+                                <p class="text-xs text-slate-600 mt-1">Murah, sederhana, mudah diproduksi. Contoh: Transparansi OHP, Slide, Modul Cetak, Kaset audio.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+                        <h4 class="font-bold text-indigo-900 text-base mb-2">2. Menurut Daya Liput (Jangkauan Sasaran)</h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="bg-white p-2.5 rounded-lg border border-blue-200"><strong>Daya Liput Luas (Massal):</strong> Radio, Siaran Televisi, Situs Web Terbuka.</li>
+                            <li class="bg-white p-2.5 rounded-lg border border-blue-200"><strong>Daya Liput Terbatas (Kelompok):</strong> Slide, Video di Kelas, Modul Kelompok.</li>
+                            <li class="bg-white p-2.5 rounded-lg border border-blue-200"><strong>Daya Liput Individual:</strong> Modul Mandiri, CAI, Software Pembelajaran Sesuai Kecepatan Siswa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERT 5: Leshin et al. -->
+            <div id="expert-leshin" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 05</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Leshin, Pollock & Reigeluth (1992)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Saluran Interaksi & Sumber Penyampaian Pesan</p>
+                    </div>
+                    <span class="px-3 py-1 bg-sky-100 text-sky-800 font-bold text-xs rounded-full">5 Kelompok Utama</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-edu-800 mb-1">1. Media Berbasis Manusia</h4>
+                        <p class="text-xs text-slate-600">Pengajar, Tutor, Peran Main (*Role Play*), Diskusi Kelompok, Instruktur.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-edu-800 mb-1">2. Media Berbasis Cetak</h4>
+                        <p class="text-xs text-slate-600">Buku panduan, Modul, Jurnal, Lembar Kerja, Peta konsep cetak.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-edu-800 mb-1">3. Media Berbasis Visual</h4>
+                        <p class="text-xs text-slate-600">Bagan, Diagram, Transparansi OHP, Slide, Peta, Grafik visual.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-edu-800 mb-1">4. Media Berbasis AV</h4>
+                        <p class="text-xs text-slate-600">Video, Film, Pita kaset bersuara, Televisi pendidikan.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-edu-800 mb-1">5. Berbasis Komputer</h4>
+                        <p class="text-xs text-slate-600">Interaktif Multimedia, Hypermedia, Pembelajaran Berbasis Web.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERT 6: Heinich et al. -->
+            <div id="expert-heinich" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 06</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Heinich, Molenda, Russell, Smaldino (1996/2002)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Format Teknologi & Model ASSURE Integratif</p>
+                    </div>
+                    <span class="px-3 py-1 bg-rose-100 text-rose-800 font-bold text-xs rounded-full">6 Kategori Standar AECT</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-sm font-bold text-slate-900 block mb-1">1. Media Tidak Diproyeksikan (*Non-projected*)</strong>
+                        <p class="text-xs text-slate-600">Gambar diam, foto, diagram, benda nyata (realia), model 3D, bahan cetak.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-sm font-bold text-slate-900 block mb-1">2. Media Diproyeksikan (*Projected Media*)</strong>
+                        <p class="text-xs text-slate-600">Slide proyektor, Transparansi OHP, Proyektor Digital/LCD.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-sm font-bold text-slate-900 block mb-1">3. Media Audio</strong>
+                        <p class="text-xs text-slate-600">Kaset audio, CD audio, Siaran radio, Podcast instruksional.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-sm font-bold text-slate-900 block mb-1">4. Media Video & Film</strong>
+                        <p class="text-xs text-slate-600">Kaset video, DVD, Siaran TV, Rekaman video digital interaktif.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-sm font-bold text-slate-900 block mb-1">5. Media Berbasis Komputer</strong>
+                        <p class="text-xs text-slate-600">Software multimedia, Internet, e-Learning, Game simulasi digital.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-sm font-bold text-slate-900 block mb-1">6. Kit Multi-Media</strong>
+                        <p class="text-xs text-slate-600">Paket belajar gabungan (Buku + Alat peraga + CD + Lembar kerja).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERT 7: Seels & Glasgow -->
+            <div id="expert-seels" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 07</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Seels & Glasgow (1990)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Perkembangan Perkembangan Teknologi (Tradisional vs Mutakhir)</p>
+                    </div>
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-800 font-bold text-xs rounded-full">Dua Kelompok Era</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-slate-900 text-sm mb-3 text-edu-700">A. Pilihan Media Tradisional</h4>
+                        <ul class="space-y-1.5 text-xs text-slate-600">
+                            <li>• <strong>Visual diam tidak diproyeksikan:</strong> Gambar, poster, foto, grafik.</li>
+                            <li>• <strong>Visual diam diproyeksikan:</strong> Slide, transparansi.</li>
+                            <li>• <strong>Audio:</strong> Rekaman pita, piringan hitam.</li>
+                            <li>• <strong>Penyajian Multimedia:</strong> Slide bersuara.</li>
+                            <li>• <strong>Visual dinamis diproyeksikan:</strong> Film, video, TV.</li>
+                            <li>• <strong>Cetak:</strong> Buku teks, modul terprogram.</li>
+                            <li>• <strong>Permainan:</strong> Teka-teki, simulasi fisik.</li>
+                            <li>• <strong>Realia:</strong> Model, spesimen, globe.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-5 bg-edu-50 rounded-xl border border-edu-200">
+                        <h4 class="font-bold text-slate-900 text-sm mb-3 text-edu-800">B. Pilihan Media Teknologi Mutakhir</h4>
+                        <ul class="space-y-1.5 text-xs text-slate-700">
+                            <li>• <strong>Media Berbasis Telekomunikasi:</strong> Teleconference, Pembelajaran jarak jauh siaran satelit.</li>
+                            <li>• <strong>Media Berbasis Mikroprosesor / Komputer:</strong> Computer-Assisted Instruction (CAI), Hypertext, Video Interaktif, Simulasi Realitas Maya (VR/AR).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERT 8: Punaji Setyosari -->
+            <div id="expert-setyosari" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 08</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Punaji Setyosari & Sihkabuden (2005)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Niat Pembuatan (*By Design vs By Utilization*) & Kompleksitas</p>
+                    </div>
+                    <span class="px-3 py-1 bg-teal-100 text-teal-800 font-bold text-xs rounded-full">Perspektif Lokal Kebutuhan Sekolah</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-teal-50/50 border border-teal-200 rounded-xl">
+                        <h4 class="font-bold text-teal-900 text-sm mb-2">1. Berdasarkan Asal-Usul / Niat Pembuatan</h4>
+                        <div class="space-y-2 text-xs text-slate-700">
+                            <p>• <strong>Media Dirancang (*Media by Design*):</strong> Media yang sejak awal sengaja dibuat khusus untuk tujuan instruksional tertentu. (Contoh: Modul perkuliahan, Software CAI).</p>
+                            <p>• <strong>Media Dimanfaatkan (*Media by Utilization*):</strong> Media yang berada di lingkungan sekitar yang tidak dirancang untuk belajar, namun dimanfaatkan untuk pembelajaran. (Contoh: Pasar, Kebun Sekolah, Suratkabar).</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-teal-50/50 border border-teal-200 rounded-xl">
+                        <h4 class="font-bold text-teal-900 text-sm mb-2">2. Berdasarkan Tingkat Kerumitan & Cara Pembuatan</h4>
+                        <div class="space-y-2 text-xs text-slate-700">
+                            <p>• <strong>Media Sederhana:</strong> Bahan mudah didapat, murah, dibuat sendiri oleh guru/siswa tanpa keahlian khusus.</p>
+                            <p>• <strong>Media Kompleks:</strong> Membutuhkan spesialisasi teknis, peralatan elektronik tinggi, dan investasi biaya lebih mahal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERT 9: Gerlach & Ely -->
+            <div id="expert-gerlach" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 09</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Gerlach & Ely (1980)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Karakteristik Fisik & Lingkungan Penggunaan</p>
+                    </div>
+                    <span class="px-3 py-1 bg-amber-100 text-amber-800 font-bold text-xs rounded-full">7 Kelompok Klasik</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-xs font-bold text-slate-900 block mb-1">1. Benda Nyata (*Realia*)</strong><p class="text-xs text-slate-600">Benda sesungguhnya, spesimen hidup, objek asli.</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-xs font-bold text-slate-900 block mb-1">2. Bahan Grafis/Gambar</strong><p class="text-xs text-slate-600">Foto, lukisan, sketsa, grafik, peta datar.</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-xs font-bold text-slate-900 block mb-1">3. Bahan Diproyeksikan</strong><p class="text-xs text-slate-600">Slide transparansi, filmstrip, gambar tayang proyektor.</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-xs font-bold text-slate-900 block mb-1">4. Rekaman Audio</strong><p class="text-xs text-slate-600">Pita rekaman suara, siaran suara radio.</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-xs font-bold text-slate-900 block mb-1">5. Gambar Bergerak / Video</strong><p class="text-xs text-slate-600">Film bersuara, rekaman pita video live action.</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-xs font-bold text-slate-900 block mb-1">6. Teks Cetak Terprogram</strong><p class="text-xs text-slate-600">Buku teks terstruktur mandiri dengan urutan logis.</p></div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-xs font-bold text-slate-900 block mb-1">7. Pengajaran Komputer</strong><p class="text-xs text-slate-600">Perangkat elektronik interaktif pemberi instruksi.</p></div>
+                </div>
+            </div>
+
+            <!-- EXPERT 10: Jerrold Kemp -->
+            <div id="expert-jkemp" class="expert-content hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold text-edu-600 tracking-wider uppercase">Taksonomi 10</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Jerrold E. Kemp (1977/1994)</h3>
+                        <p class="text-xs text-slate-500">Dasar Klasifikasi: Matriks Sistem Desain Instruksional & Mode Penyampaian</p>
+                    </div>
+                    <span class="px-3 py-1 bg-violet-100 text-violet-800 font-bold text-xs rounded-full">Pendekatan Sistemik</span>
+                </div>
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    Jerrold Kemp menekankan bahwa pemilihan media harus terintegrasi langsung dalam **Siklus Desain Instruksional**. Ia membagi media berdasarkan fungsi instruksionalnya:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-slate-900 font-bold block mb-1">A. Penyajian Klasik Tatap Muka</strong>
+                        <p class="text-slate-600">Papan tulis, OHP, Slide Proyektor untuk penjelasan massal di kelas.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-slate-900 font-bold block mb-1">B. Media Mandiri Peserta Didik</strong>
+                        <p class="text-slate-600">Modul terprogram, audio tutorial, software latihan interaktif.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-slate-900 font-bold block mb-1">C. Pengalaman Terbuka / Pengamatan Direct</strong>
+                        <p class="text-slate-600">Praktikum laboratorium, benda nyata, simulasi kelompok.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SIMULATOR ANALISIS MEDIA INTERAKTIF -->
+        <section id="simulator" class="scroll-mt-20">
+            <div class="bg-gradient-to-br from-slate-900 via-edu-900 to-slate-900 text-white p-6 sm:p-10 rounded-3xl shadow-xl">
+                <div class="max-w-3xl mb-8">
+                    <span class="inline-flex items-center space-x-2 px-3 py-1 bg-amber-400 text-slate-900 rounded-full text-xs font-bold mb-3">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                        <span>Fitur Laboratorium TP</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black mb-3">Simulator Analisis Taksonomi Media</h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Pilih salah satu contoh media pembelajaran nyata di bawah ini untuk melihat bagaimana **10 Tokoh/Ahli** mengkategorikannya secara langsung dalam waktu bersamaan!
+                    </p>
+                </div>
+
+                <!-- Media Selector Dropdown/Buttons -->
+                <div class="mb-8">
+                    <label class="block text-xs font-bold uppercase text-edu-200 mb-2">Pilih Jenis Media Pembelajaran Nyata:</label>
+                    <select id="media-simulator-select" onchange="runMediaSimulation()" class="w-full sm:w-1/2 p-3.5 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-amber-400">
+                        <option value="video_youtube">Video Pembelajaran YouTube / MP4 (Dengan Suara & Gerak)</option>
+                        <option value="modul_pdf">Modul Pembelajaran Cetak / File PDF</option>
+                        <option value="podcast_spotify">Podcast Suara Instruksional MP3</option>
+                        <option value="slide_powerpoint">Presentasi Slide PowerPoint (Visual Diam)</option>
+                        <option value="diorama_3d">Diorama Tiga Dimensi / Model Fisik Realia</option>
+                        <option value="cai_web">Game Edukasi Web Interaktif / Aplikasi Komputer</option>
+                    </select>
+                </div>
+
+                <!-- Simulation Result Grid -->
+                <div id="simulation-output" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <!-- Dynamic contents via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Matriks Perbandingan Ringkas -->
+        <section id="matriks" class="scroll-mt-20">
+            <div class="border-l-4 border-amber-500 pl-4 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Matriks Perbandingan Ringkas Lintas Taksonomi</h2>
+                <p class="text-slate-600 text-sm">Ikhtisar komparatif kriteria utama seluruh pakar media pembelajaran.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse">
+                        <thead class="bg-slate-900 text-white font-bold uppercase text-xs">
+                            <tr>
+                                <th class="p-4">Tokoh / Ahli</th>
+                                <th class="p-4">Dasar Utama Pengelompokan</th>
+                                <th class="p-4">Jumlah Kategori</th>
+                                <th class="p-4">Karakteristik Unik</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-700">
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Rudy Bretz</td><td class="p-4">3 Unsur dasar: Suara, Gambar, Gerak</td><td class="p-4"><span class="px-2 py-1 bg-edu-100 text-edu-800 rounded font-bold">8 Kelompok</span></td><td class="p-4">Membedakan visual diam vs gerak & perekaman vs penyiaran.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Ronald Anderson</td><td class="p-4">Wujud fisik, media penyampaian, & teknologi</td><td class="p-4"><span class="px-2 py-1 bg-amber-100 text-amber-800 rounded font-bold">10 Kelompok</span></td><td class="p-4">Praktis untuk pengelompokan sarana kelas.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Kemp & Dayton</td><td class="p-4">Teknik pembuatan & format fisik sajian</td><td class="p-4"><span class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded font-bold">8 Kelompok</span></td><td class="p-4">Fokus pada panduan praktis produksi media instruksional.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Wilbur Schramm</td><td class="p-4">Kompleksitas/biaya (*Big vs Little*) & jangkauan sasaran</td><td class="p-4"><span class="px-2 py-1 bg-purple-100 text-purple-800 rounded font-bold">2 Dikotomi / 3 Liputan</span></td><td class="p-4">Pertimbangan ekonomis & skala khalayak belajar.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Leshin et al.</td><td class="p-4">Sumber transmisi pesan & media dasar</td><td class="p-4"><span class="px-2 py-1 bg-sky-100 text-sky-800 rounded font-bold">5 Kelompok</span></td><td class="p-4">Menempatkan *Manusia* sebagai kelompok media mandiri.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Heinich et al.</td><td class="p-4">Teknologi format media & kerangka ASSURE</td><td class="p-4"><span class="px-2 py-1 bg-rose-100 text-rose-800 rounded font-bold">6 Kategori</span></td><td class="p-4">Standar rujukan internasional AECT.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Seels & Glasgow</td><td class="p-4">Perkembangan zaman & evolusi teknologi</td><td class="p-4"><span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded font-bold">Tradisional vs Mutakhir</span></td><td class="p-4">Akomodatif terhadap era digital & mikroprosesor.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Punaji Setyosari</td><td class="p-4">Pemanfaatan (*By Design vs By Utilization*) & kepraktisan</td><td class="p-4"><span class="px-2 py-1 bg-teal-100 text-teal-800 rounded font-bold">2 Niat / 2 Rumit</span></td><td class="p-4">Sesuai dengan kearifan lokal & ketersediaan di sekolah.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Gerlach & Ely</td><td class="p-4">Ciri fisik sajian & peraga pembelajaran</td><td class="p-4"><span class="px-2 py-1 bg-amber-100 text-amber-800 rounded font-bold">7 Kelompok</span></td><td class="p-4">Menekankan bahan terprogram & realia lingkungan.</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">Jerrold Kemp</td><td class="p-4">Fungsi dalam siklus desain instruksional</td><td class="p-4"><span class="px-2 py-1 bg-violet-100 text-violet-800 rounded font-bold">3 Mode Penyampaian</span></td><td class="p-4">Pendekatan sistemik pemilihan media.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Kuis Evaluasi Mahasiswa -->
+        <section id="kuis" class="scroll-mt-20">
+            <div class="border-l-4 border-academic-emerald pl-4 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Evaluasi Mandiri Mahasiswa (Soal HOTS)</h2>
+                <p class="text-slate-600 text-sm">Uji pemahaman analitis Anda terkait klasifikasi media pembelajaran berdasarkan 10 taksonomi pakar.</p>
+            </div>
+
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div id="quiz-box">
+                    <div class="flex justify-between items-center pb-4 mb-6 border-b border-slate-100 text-xs sm:text-sm font-bold text-slate-500">
+                        <span id="quiz-progress-text" class="text-edu-700">Soal 1 dari 5</span>
+                        <span id="quiz-score-num" class="px-3 py-1 bg-edu-100 text-edu-800 rounded-full">Skor: 0</span>
+                    </div>
+
+                    <h3 id="quiz-question-text" class="text-base sm:text-lg font-bold text-slate-900 mb-6">
+                        <!-- Question text inserted by JS -->
+                    </h3>
+
+                    <div id="quiz-options-container" class="space-y-3 mb-6">
+                        <!-- Options inserted by JS -->
+                    </div>
+
+                    <div id="quiz-explanation" class="hidden p-4 rounded-xl text-xs sm:text-sm mb-6"></div>
+
+                    <div class="flex justify-end">
+                        <button id="quiz-next-btn" onclick="nextQuizStep()" class="hidden px-6 py-2.5 bg-edu-600 hover:bg-edu-700 text-white font-bold rounded-xl transition text-sm">
+                            Soal Selanjutnya
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs sm:text-sm space-y-4">
+            <div class="flex justify-center items-center space-x-2 text-white font-bold text-base">
+                <i data-lucide="graduation-cap" class="w-5 h-5 text-amber-400"></i>
+                <span>Jurusan Teknologi Pendidikan</span>
+            </div>
+            <p class="max-w-2xl mx-auto text-slate-400">
+                Media Pembelajaran Interaktif ini dirancang untuk mahasiswa dan praktisi Teknologi Pendidikan guna menguasai landasan teori taksonomi media secara sistematis.
+            </p>
+            <p class="text-xs text-slate-500">
+                Referensi: Bretz (1971), Anderson (1976), Kemp & Dayton (1985), Schramm (1977), Leshin et al. (1992), Heinich et al. (2002), Seels & Glasgow (1990), Setyosari (2005), Gerlach & Ely (1980), Kemp (1994).
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Expert Tab Switching Logic
+        function showExpert(expertId) {
+            // Hide all expert contents
+            document.querySelectorAll('.expert-content').forEach(el => el.classList.add('hidden'));
+
+            // Reset tab styles
+            document.querySelectorAll('.expert-tab').forEach(btn => {
+                btn.classList.remove('bg-edu-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+
+            // Show target expert
+            document.getElementById(`expert-${expertId}`).classList.remove('hidden');
+
+            // Highlight target tab
+            const activeBtn = document.getElementById(`btn-${expertId}`);
+            activeBtn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            activeBtn.classList.add('bg-edu-600', 'text-white', 'shadow-sm');
+        }
+
+        const simulatorData = {
+            "video_youtube": {
+                name: "Video YouTube / MP4 Bersuara",
+                bretz: "1. Audio-Visual Gerak",
+                anderson: "7. Visual Gerak dengan Audio",
+                kempdayton: "7. Rekaman Video & Film Gerak",
+                schramm: "Big Media / Media Massal atau Kelompok",
+                leshin: "4. Media Berbasis Audio-Visual",
+                heinich: "4. Media Video & Film",
+                seels: "Pilihan Media Tradisional (Visual Dinamis Diproyeksikan)",
+                setyosari: "Media Dirancang (*by Design*) & Media Kompleks",
+                gerlach: "5. Gambar Bergerak / Video",
+                jkemp: "A. Penyajian Klasik atau B. Media Mandiri"
+            },
+            "modul_pdf": {
+                name: "Modul Cetak / E-Book PDF",
+                bretz: "8. Media Cetak",
+                anderson: "2. Media Cetak",
+                kempdayton: "1. Media Cetak (*Printed Media*)",
+                schramm: "Little Media / Media Individual",
+                leshin: "2. Media Berbasis Cetak",
+                heinich: "1. Media Tidak Diproyeksikan (Bahan Cetak)",
+                seels: "Pilihan Media Tradisional (Bahan Cetak)",
+                setyosari: "Media Dirancang (*by Design*) & Media Sederhana",
+                gerlach: "6. Teks Cetak Terprogram",
+                jkemp: "B. Media Belajar Mandiri"
+            },
+            "podcast_spotify": {
+                name: "Podcast MP3 Instruksional",
+                bretz: "7. Media Audio",
+                anderson: "1. Media Audio",
+                kempdayton: "4. Rekaman Audio",
+                schramm: "Little Media / Media Massal/Individual",
+                leshin: "4. Media Berbasis Audio-Visual (Sub-Audio)",
+                heinich: "3. Media Audio",
+                seels: "Pilihan Media Tradisional (Audio)",
+                setyosari: "Media Dirancang (*by Design*) & Media Sederhana",
+                gerlach: "4. Rekaman Audio",
+                jkemp: "B. Media Belajar Mandiri"
+            },
+            "slide_powerpoint": {
+                name: "Slide PowerPoint Proyektor",
+                bretz: "5. Media Visual Diam",
+                anderson: "4. Visual Diam",
+                kempdayton: "3. Overhead Transparencies / Proyeksi Digital",
+                schramm: "Little Media / Media Kelompok",
+                leshin: "3. Media Berbasis Visual",
+                heinich: "2. Media Diproyeksikan (*Projected Media*)",
+                seels: "Pilihan Media Tradisional (Visual Diam Diproyeksikan)",
+                setyosari: "Media Dirancang (*by Design*)",
+                gerlach: "3. Bahan Diproyeksikan",
+                jkemp: "A. Penyajian Klasik Tatap Muka"
+            },
+            "diorama_3d": {
+                name: "Diorama 3D / Realia Organ Tubuh",
+                bretz: "5. Visual Diam (Bentuk 3D)",
+                anderson: "8. Benda Realia / Objek Fisik",
+                kempdayton: "2. Media Pajang / Pameran",
+                schramm: "Little Media / Media Kelompok",
+                leshin: "3. Media Berbasis Visual (Spasial)",
+                heinich: "1. Media Tidak Diproyeksikan (Realia/Model 3D)",
+                seels: "Pilihan Media Tradisional (Realia & Model)",
+                setyosari: "Media Dirancang atau Dimanfaatkan (*by Utilization*)",
+                gerlach: "1. Benda Nyata (*Realia*)",
+                jkemp: "C. Pengalaman Terbuka / Pengamatan Direct"
+            },
+            "cai_web": {
+                name: "Game Edukasi Web / Aplikasi Komputer Interaktif",
+                bretz: "1. Audio-Visual Gerak (Interaktif)",
+                anderson: "10. Komputer (CAI)",
+                kempdayton: "8. Pembelajaran Berbasis Komputer",
+                schramm: "Big Media / Media Individual Interaktif",
+                leshin: "5. Media Berbasis Komputer",
+                heinich: "5. Media Berbasis Komputer",
+                seels: "Pilihan Media Teknologi Mutakhir (Berbasis Komputer/Mikroprosesor)",
+                setyosari: "Media Dirancang (*by Design*) & Media Kompleks",
+                gerlach: "7. Pengajaran Komputer",
+                jkemp: "B. Media Belajar Mandiri Interaktif"
+            }
+        };
+
+        function runMediaSimulation() {
+            const selectedKey = document.getElementById('media-simulator-select').value;
+            const item = simulatorData[selectedKey];
+            const container = document.getElementById('simulation-output');
+
+            container.innerHTML = `
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Rudy Bretz</span>
+                    <p class="text-xs font-semibold text-white">${item.bretz}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Ronald Anderson</span>
+                    <p class="text-xs font-semibold text-white">${item.anderson}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Kemp & Dayton</span>
+                    <p class="text-xs font-semibold text-white">${item.kempdayton}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Wilbur Schramm</span>
+                    <p class="text-xs font-semibold text-white">${item.schramm}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Leshin et al.</span>
+                    <p class="text-xs font-semibold text-white">${item.leshin}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Heinich et al.</span>
+                    <p class="text-xs font-semibold text-white">${item.heinich}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Seels & Glasgow</span>
+                    <p class="text-xs font-semibold text-white">${item.seels}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Punaji Setyosari</span>
+                    <p class="text-xs font-semibold text-white">${item.setyosari}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Gerlach & Ely</span>
+                    <p class="text-xs font-semibold text-white">${item.gerlach}</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="text-xs text-amber-400 font-bold uppercase block mb-1">Jerrold Kemp</span>
+                    <p class="text-xs font-semibold text-white">${item.jkemp}</p>
+                </div>
+            `;
+        }
+
+        const quizQuestions = [
+            {
+                q: "Seorang dosen membawa mahasiswa Teknologi Pendidikan ke area hutan mangrove untuk mengamati ekosistem secara langsung tanpa membawa alat elektronik. Menurut Punaji Setyosari & Sihkabuden, hutan mangrove tersebut masuk dalam kategori media...",
+                options: [
+                    "Media Dirancang (*Media by Design*)",
+                    "Media Dimanfaatkan (*Media by Utilization*)",
+                    "Big Media Kompleks",
+                    "Media Terproyeksi Digital"
+                ],
+                correct: 1,
+                exp: "Setyosari membedakan 'Media by Design' (dibuat khusus instruksional) dan 'Media by Utilization' (lingkungan sekitar yang dimanfaatkan untuk belajar meskipun tidak khusus dirancang untuk itu)."
+            },
+            {
+                q: "Manakah perbedaan mendasar antara taksonomi Rudy Bretz dan taksonomi Wilbur Schramm?",
+                options: [
+                    "Bretz mendasarkan pada 3 unsur indera (Suara, Visual, Gerak), sedangkan Schramm mendasarkan pada kompleksitas/biaya dan daya liput jangkauan",
+                    "Bretz membagi media menjadi 10 kelompok, sedangkan Schramm membagi media menjadi 2 kelompok saja",
+                    "Schramm hanya meneliti media komputer, sedangkan Bretz fokus pada media cetak",
+                    "Bretz dan Schramm menggunakan kriteria yang persis sama tanpa perbedaan"
+                ],
+                correct: 0,
+                exp: "Rudy Bretz berfokus pada ciri fisik indera (suara, visual, gerak), sedangkan Wilbur Schramm menggunakan kriteria ekonomis/kerumitan (Big vs Little Media) serta daya liput sasaran."
+            },
+            {
+                q: "Klasifikasi media yang secara eksplisit menempatkan 'Manusia' (seperti guru, narasumber, tutor) sebagai salah satu kelompok media mandiri dikemukakan oleh...",
+                options: [
+                    "Gerlach & Ely",
+                    "Leshin, Pollock & Reigeluth",
+                    "Seels & Glasgow",
+                    "Rudy Bretz"
+                ],
+                correct: 1,
+                exp: "Leshin, Pollock & Reigeluth mengklasifikasikan 5 media utama: Berbasis Manusia, Berbasis Cetak, Berbasis Visual, Berbasis Audio-Visual, dan Berbasis Komputer."
+            },
+            {
+                q: "Teknologi seperti Virtual Reality (VR), Augmented Reality (AR), dan Hypermedia interaktif dalam taksonomi Seels & Glasgow dimasukkan ke dalam kelompok...",
+                options: [
+                    "Pilihan Media Tradisional",
+                    "Pilihan Media Teknologi Mutakhir (Berbasis Mikroprosesor)",
+                    "Media Pajang Pameran",
+                    "Media Cetak Terprogram"
+                ],
+                correct: 1,
+                exp: "Seels & Glasgow membagi media menjadi Era Tradisional dan Era Teknologi Mutakhir (yang mencakup mikroprosesor, telekomunikasi, VR, dan hypermedia)."
+            },
+            {
+                q: "Model integrasi media ASSURE yang menjadi standar pengelompokan media AECT dikembangkan oleh...",
+                options: [
+                    "Heinich, Molenda, Russell & Smaldino",
+                    "Rudy Bretz & Ronald Anderson",
+                    "Gerlach & Ely",
+                    "Wilbur Schramm"
+                ],
+                correct: 0,
+                exp: "Model ASSURE dikembangkan oleh Heinich, Molenda, Russell, & Smaldino sebagai kerangka kerja integrasi media ke dalam perencanaan instruksional."
+            }
+        ];
+
+        let quizIndex = 0;
+        let userScore = 0;
+
+        function renderQuizQuestion() {
+            const qObj = quizQuestions[quizIndex];
+            document.getElementById('quiz-progress-text').innerText = `Soal ${quizIndex + 1} dari ${quizQuestions.length}`;
+            document.getElementById('quiz-question-text').innerText = qObj.q;
+
+            const optsDiv = document.getElementById('quiz-options-container');
+            optsDiv.innerHTML = '';
+
+            qObj.options.forEach((optText, i) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 hover:bg-edu-50 hover:border-edu-300 transition text-xs sm:text-sm font-semibold text-slate-800 flex items-center space-x-3";
+                btn.innerHTML = `<span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold flex-shrink-0">${String.fromCharCode(65 + i)}</span><span>${optText}</span>`;
+                btn.onclick = () => handleAnswerSelect(i);
+                optsDiv.appendChild(btn);
+            });
+
+            document.getElementById('quiz-explanation').classList.add('hidden');
+            document.getElementById('quiz-next-btn').classList.add('hidden');
+        }
+
+        function handleAnswerSelect(selectedIdx) {
+            const qObj = quizQuestions[quizIndex];
+            const expDiv = document.getElementById('quiz-explanation');
+            const optsContainer = document.getElementById('quiz-options-container').children;
+
+            // Disable buttons
+            for (let b of optsContainer) {
+                b.disabled = true;
+                b.classList.add('opacity-70', 'cursor-not-allowed');
+            }
+
+            if (selectedIdx === qObj.correct) {
+                userScore += 20;
+                document.getElementById('quiz-score-num').innerText = `Skor: ${userScore}`;
+                expDiv.className = "p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm";
+                expDiv.innerHTML = `<strong>Jawaban Tepat!</strong> ${qObj.exp}`;
+            } else {
+                expDiv.className = "p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs sm:text-sm";
+                expDiv.innerHTML = `<strong>Jawaban Kurang Tepat.</strong> ${qObj.exp}`;
+            }
+
+            expDiv.classList.remove('hidden');
+
+            const nextBtn = document.getElementById('quiz-next-btn');
+            if (quizIndex < quizQuestions.length - 1) {
+                nextBtn.innerText = "Soal Selanjutnya";
+            } else {
+                nextBtn.innerText = "Lihat Hasil Akhir";
+            }
+            nextBtn.classList.remove('hidden');
+        }
+
+        function nextQuizStep() {
+            if (quizIndex < quizQuestions.length - 1) {
+                quizIndex++;
+                renderQuizQuestion();
+            } else {
+                // Show final score summary
+                const quizBox = document.getElementById('quiz-box');
+                quizBox.innerHTML = `
+                    <div class="text-center py-8 space-y-4">
+                        <div class="w-16 h-16 bg-edu-100 text-edu-700 rounded-full flex items-center justify-center mx-auto">
+                            <i data-lucide="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">Evaluasi Selesai!</h3>
+                        <p class="text-slate-600 text-sm">Skor Akhir Evaluasi Mahasiswa TP Anda:</p>
+                        <div class="text-4xl font-black text-edu-600">${userScore} / 100</div>
+                        <button onclick="location.reload()" class="px-6 py-3 bg-edu-600 text-white font-bold rounded-xl hover:bg-edu-700 transition text-sm">
+                            Ulangi Latihan Evaluasi
+                        </button>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        window.onload = function() {
+            runMediaSimulation();
+            renderQuizQuestion();
+        };
+    </script>
+</body>
+</html>
