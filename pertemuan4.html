@@ -1,9 +1,9 @@
-<!DOCTYPE1 html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Pembelajaran: Analisis & Prinsip Pemilihan Media</title>
+    <title>Learning Media Portal: Media Characteristics & Selection Principles</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -51,33 +51,33 @@
 
     <!-- Navigation Bar -->
     <header class="sticky top-0 z-50 glass-panel border-b border-slate-200/80 shadow-sm">
-        <div class="max-w-7xl mx-mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('prinsip')">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
                     <i class="fa-solid fa-graduation-cap text-lg"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-slate-900 leading-tight">MediaPembelajaran.id</h1>
-                    <p class="text-xs text-slate-500 hidden sm:block">Portal Perkulihan Analisis & Prinsip Media</p>
+                    <h1 class="font-bold text-slate-900 leading-tight">LearningMedia.edu</h1>
+                    <p class="text-xs text-slate-500 hidden sm:block">Media Analysis & Selection Principles Portal</p>
                 </div>
             </div>
 
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-1 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
                 <button onclick="switchTab('prinsip')" id="nav-prinsip" class="nav-btn px-4 py-2 text-xs font-semibold rounded-lg transition-all text-brand-600 bg-white shadow-sm">
-                    <i class="fa-solid fa-compass mr-1.5"></i> Prinsip Dasar
+                    <i class="fa-solid fa-compass mr-1.5"></i> Core Principles
                 </button>
                 <button onclick="switchTab('taksonomi')" id="nav-taksonomi" class="nav-btn px-4 py-2 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
-                    <i class="fa-solid fa-cubes mr-1.5"></i> Taksonomi Media
+                    <i class="fa-solid fa-cubes mr-1.5"></i> Media Taxonomy
                 </button>
                 <button onclick="switchTab('studi-kasus')" id="nav-studi-kasus" class="nav-btn px-4 py-2 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
-                    <i class="fa-solid fa-users-rectangle mr-1.5"></i> Studi Kasus
+                    <i class="fa-solid fa-users-rectangle mr-1.5"></i> Case Studies
                 </button>
                 <button onclick="switchTab('simulator')" id="nav-simulator" class="nav-btn px-4 py-2 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
-                    <i class="fa-solid fa-calculator mr-1.5"></i> Simulator ACTION
+                    <i class="fa-solid fa-calculator mr-1.5"></i> ACTION Simulator
                 </button>
                 <button onclick="switchTab('kuis')" id="nav-kuis" class="nav-btn px-4 py-2 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
-                    <i class="fa-solid fa-circle-question mr-1.5"></i> Evaluasi Kuis
+                    <i class="fa-solid fa-circle-question mr-1.5"></i> Quiz Assessment
                 </button>
             </nav>
 
@@ -90,19 +90,19 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 py-3 space-y-2 shadow-lg">
             <button onclick="switchTab('prinsip'); toggleMobileMenu();" class="w-full text-left px-3 py-2 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 flex items-center">
-                <i class="fa-solid fa-compass w-6 text-brand-600"></i> Prinsip Dasar
+                <i class="fa-solid fa-compass w-6 text-brand-600"></i> Core Principles
             </button>
             <button onclick="switchTab('taksonomi'); toggleMobileMenu();" class="w-full text-left px-3 py-2 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 flex items-center">
-                <i class="fa-solid fa-cubes w-6 text-brand-600"></i> Taksonomi Media
+                <i class="fa-solid fa-cubes w-6 text-brand-600"></i> Media Taxonomy
             </button>
             <button onclick="switchTab('studi-kasus'); toggleMobileMenu();" class="w-full text-left px-3 py-2 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 flex items-center">
-                <i class="fa-solid fa-users-rectangle w-6 text-brand-600"></i> Studi Kasus
+                <i class="fa-solid fa-users-rectangle w-6 text-brand-600"></i> Case Studies
             </button>
             <button onclick="switchTab('simulator'); toggleMobileMenu();" class="w-full text-left px-3 py-2 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 flex items-center">
-                <i class="fa-solid fa-calculator w-6 text-brand-600"></i> Simulator ACTION
+                <i class="fa-solid fa-calculator w-6 text-brand-600"></i> ACTION Simulator
             </button>
             <button onclick="switchTab('kuis'); toggleMobileMenu();" class="w-full text-left px-3 py-2 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 flex items-center">
-                <i class="fa-solid fa-circle-question w-6 text-brand-600"></i> Evaluasi Kuis
+                <i class="fa-solid fa-circle-question w-6 text-brand-600"></i> Quiz Assessment
             </button>
         </div>
     </header>
@@ -110,61 +110,61 @@
     <!-- Main Content Area -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <!-- SECTION 1: PRINSIP DASAR -->
+        <!-- SECTION 1: CORE PRINCIPLES -->
         <section id="sec-prinsip" class="space-y-8 transition-all duration-300">
             <!-- Hero Header -->
             <div class="bg-gradient-to-r from-brand-900 via-indigo-900 to-slate-900 rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden shadow-xl">
                 <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="max-w-3xl relative z-10 space-y-4">
                     <span class="inline-flex items-center gap-2 bg-brand-500/20 border border-brand-400/30 text-brand-200 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md">
-                        <i class="fa-solid fa-book-open"></i> Modul Kuliah Interaktif
+                        <i class="fa-solid fa-book-open"></i> Interactive Learning Module
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-                        Analisis Karakteristik & Prinsip Pemilihan Media Pembelajaran
+                        Analyzing Characteristics & Principles of Learning Media Selection
                     </h2>
                     <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        Memahami hakikat media sebagai saluran komunikasi instruksional, landasan psikologis Kerucut Edgar Dale, Teori Beban Kognitif, serta kerangka evaluasi ACTION.
+                        Understanding media as instructional communication channels, psychological foundations of Edgar Dale's Cone, Cognitive Load Theory, and the ACTION evaluation framework.
                     </p>
                 </div>
             </div>
 
             <!-- 2-Column Overview -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Hakikat Media Card -->
+                <!-- Nature of Media Card -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-indigo-50 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
                         <i class="fa-solid fa-diagram-project"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">1. Hakikat Media Komunikasi</h3>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">1. The Nature of Communication Media</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Media pembelajaran adalah saluran (<span class="font-semibold text-brand-600">Channel</span>) untuk mengantarkan pesan dari pengirim (Pendidik) kepada penerima (Peserta Didik) guna meminimalkan hambatan verbalisme.
+                        Learning media serves as an instructional <span class="font-semibold text-brand-600">Channel</span> to deliver messages from sender (Teacher) to receiver (Student), reducing verbalism and communication barriers.
                     </p>
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs font-medium text-slate-700 flex items-center justify-between gap-2 overflow-x-auto">
-                        <span class="bg-indigo-100 text-indigo-800 px-2.5 py-1 rounded-md">Sender (Dosen/Guru)</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-2.5 py-1 rounded-md">Sender (Teacher)</span>
                         <i class="fa-solid fa-arrow-right text-slate-400"></i>
                         <span class="bg-brand-600 text-white px-2.5 py-1 rounded-md shadow-sm">Message & Media</span>
                         <i class="fa-solid fa-arrow-right text-slate-400"></i>
-                        <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">Receiver (Siswa)</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">Receiver (Student)</span>
                     </div>
                 </div>
 
-                <!-- Teori Beban Kognitif Card -->
+                <!-- Cognitive Load Theory Card -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
                         <i class="fa-solid fa-brain"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">2. Teori Beban Kognitif (Cognitive Load)</h3>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">2. Cognitive Load Theory</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-3">
-                        Kapasitas memori kerja manusia terbatas. Pemilihan media harus menghindari kemacetan pemrosesan informasi:
+                        Human working memory has limited capacity. Media selection must avoid cognitive bottlenecks:
                     </p>
                     <ul class="space-y-2 text-xs text-slate-600">
                         <li class="flex items-start gap-2">
                             <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
-                            <span><b>Prinsip Modalitas:</b> Integrasikan sinyal visual dan audio secara seimbang.</span>
+                            <span><b>Modality Principle:</b> Balance visual and auditory signals simultaneously.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
-                            <span><b>Prinsip Redundansi:</b> Hindari membaca ulang teks panjang yang sudah ada di layar.</span>
+                            <span><b>Redundancy Principle:</b> Avoid reading aloud identical long text already visible on screen.</span>
                         </li>
                     </ul>
                 </div>
@@ -174,42 +174,42 @@
             <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Landasan Psikologis</span>
-                        <h3 class="text-xl font-bold text-slate-900">Kerucut Pengalaman Edgar Dale (Cone of Experience)</h3>
-                        <p class="text-slate-500 text-sm">Klik setiap tingkatan kerucut untuk melihat dampaknya terhadap tingkat abstraksi dan pemahaman siswa.</p>
+                        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Psychological Foundation</span>
+                        <h3 class="text-xl font-bold text-slate-900">Edgar Dale's Cone of Experience</h3>
+                        <p class="text-slate-500 text-sm">Click each level of the cone to explore its impact on abstraction levels and student comprehension.</p>
                     </div>
                     <span class="self-start sm:self-auto bg-slate-100 text-slate-600 text-xs px-3 py-1.5 rounded-lg border border-slate-200">
-                        <i class="fa-solid fa-hand-pointer mr-1"></i> Interaktif
+                        <i class="fa-solid fa-hand-pointer mr-1"></i> Interactive
                     </span>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <!-- Cone Visualization (8 cols) -->
+                    <!-- Cone Visualization (7 cols) -->
                     <div class="lg:col-span-7 space-y-2">
                         <!-- Level 1 (Top / Most Abstract) -->
                         <div onclick="selectDaleLevel(1)" id="dale-1" class="dale-item cursor-pointer p-3 rounded-xl bg-slate-100 hover:bg-indigo-50 border border-slate-200 transition flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-700">
-                            <span>1. Lambang / Simbol Verbal (Teks & Kata)</span>
-                            <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded">Sangat Abstrak</span>
+                            <span>1. Verbal Symbols & Text</span>
+                            <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded">Highly Abstract</span>
                         </div>
                         <!-- Level 2 -->
                         <div onclick="selectDaleLevel(2)" id="dale-2" class="dale-item cursor-pointer p-3.5 rounded-xl bg-slate-100 hover:bg-indigo-50 border border-slate-200 transition flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-700 mx-2">
-                            <span>2. Simbol Visual (Grafis, Diagram, Bagan)</span>
-                            <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">Abstrak</span>
+                            <span>2. Visual Symbols (Graphics, Charts, Diagrams)</span>
+                            <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">Abstract</span>
                         </div>
                         <!-- Level 3 -->
                         <div onclick="selectDaleLevel(3)" id="dale-3" class="dale-item cursor-pointer p-4 rounded-xl bg-slate-100 hover:bg-indigo-50 border border-slate-200 transition flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-700 mx-4">
-                            <span>3. Gambar Diam / Audio / Rekaman</span>
-                            <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">Sedang</span>
+                            <span>3. Still Pictures / Audio Recordings</span>
+                            <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">Moderate</span>
                         </div>
                         <!-- Level 4 -->
                         <div onclick="selectDaleLevel(4)" id="dale-4" class="dale-item cursor-pointer p-4.5 rounded-xl bg-slate-100 hover:bg-indigo-50 border border-slate-200 transition flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-700 mx-6">
-                            <span>4. Gambar Bergerak / Video / TV</span>
-                            <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">Konkret Semu</span>
+                            <span>4. Motion Pictures / Video & TV</span>
+                            <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">Semi-Concrete</span>
                         </div>
                         <!-- Level 5 -->
                         <div onclick="selectDaleLevel(5)" id="dale-5" class="dale-item cursor-pointer p-5 rounded-xl bg-brand-600 text-white shadow-md border border-brand-500 transition flex items-center justify-between text-xs sm:text-sm font-bold mx-8">
-                            <span>5. Benda Tiruan (Model 3D / Benda Nyata / Realia)</span>
-                            <span class="text-xs bg-white/20 text-white px-2 py-0.5 rounded">Sangat Konkret</span>
+                            <span>5. 3D Models & Realia (Direct Real Experiences)</span>
+                            <span class="text-xs bg-white/20 text-white px-2 py-0.5 rounded">Highly Concrete</span>
                         </div>
                     </div>
 
@@ -220,80 +220,80 @@
                 </div>
             </div>
 
-            <!-- ACTION Framework Accordion Grid -->
+            <!-- ACTION Framework Grid -->
             <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
                 <div>
-                    <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Kerangka Evaluasi Gary J. Anglin</span>
-                    <h3 class="text-xl font-bold text-slate-900">Kerangka Kerja ACTION</h3>
-                    <p class="text-slate-500 text-sm">6 Dimensi utama dalam mengevaluasi kelayakan penggunaan media pembelajaran di sekolah/kampus.</p>
+                    <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Evaluation Framework (Gary J. Anglin)</span>
+                    <h3 class="text-xl font-bold text-slate-900">The ACTION Framework</h3>
+                    <p class="text-slate-500 text-sm">6 Primary dimensions to evaluate the feasibility of learning media in institutional settings.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition space-y-2">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center font-extrabold text-sm">A</span>
-                            <h4 class="font-bold text-slate-900">Access (Akses)</h4>
+                            <h4 class="font-bold text-slate-900">Access</h4>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed">Seberapa mudah media dapat dijangkau oleh semua peserta didik dan pengajar tanpa kendala lisensi atau geografis?</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">How easily accessible is the media for all learners and instructors without licensing or geographic barriers?</p>
                     </div>
 
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition space-y-2">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-extrabold text-sm">C</span>
-                            <h4 class="font-bold text-slate-900">Cost (Biaya)</h4>
+                            <h4 class="font-bold text-slate-900">Cost</h4>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed">Rasionalitas biaya pembuatan, pembelian, serta perawatan jangka panjang dibandingkan jumlah pengguna.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Cost-effectiveness of creation, purchasing, and long-term maintenance relative to user reach.</p>
                     </div>
 
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition space-y-2">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center font-extrabold text-sm">T</span>
-                            <h4 class="font-bold text-slate-900">Technology (Teknologi)</h4>
+                            <h4 class="font-bold text-slate-900">Technology</h4>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed">Ketersediaan daya listrik, jaringan internet, hardware, serta stabilitas perangkat teknis pendukung.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Availability of power, internet connectivity, hardware support, and technical infrastructure stability.</p>
                     </div>
 
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition space-y-2">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-extrabold text-sm">I</span>
-                            <h4 class="font-bold text-slate-900">Interactivity (Interaksi)</h4>
+                            <h4 class="font-bold text-slate-900">Interactivity</h4>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed">Seberapa mampu media memicu daya kritis, partisipasi aktif, serta umpan balik langsung (*feedback*).</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">The degree to which media fosters critical thinking, active participation, and immediate feedback.</p>
                     </div>
 
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition space-y-2">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center font-extrabold text-sm">O</span>
-                            <h4 class="font-bold text-slate-900">Organization (Organisasi)</h4>
+                            <h4 class="font-bold text-slate-900">Organization</h4>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed">Dukungan teknis dari pimpinan sekolah, kebijakan institusi, serta kesiapan budaya organisasi.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Institutional leadership support, policy alignment, and organizational culture readiness.</p>
                     </div>
 
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition space-y-2">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-rose-600 text-white flex items-center justify-center font-extrabold text-sm">N</span>
-                            <h4 class="font-bold text-slate-900">Novelty (Kebaruan)</h4>
+                            <h4 class="font-bold text-slate-900">Novelty</h4>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed">Apakah kebaruan media meningkatkan motivasi belajar atau justru menjadi keriuhan distraction berlebih?</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Does the novelty factor boost learning motivation or create unnecessary cognitive distraction?</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: TAKSONOMI MEDIA -->
+        <!-- SECTION 2: MEDIA TAXONOMY -->
         <section id="sec-taksonomi" class="hidden space-y-8 transition-all duration-300">
             <!-- Header Section -->
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm">
                 <div>
-                    <h2 class="text-2xl font-bold text-slate-900">Analisis Taksonomi Media Pembelajaran</h2>
-                    <p class="text-slate-500 text-sm mt-1">Telaah perbandingan kelebihan, keterbatasan, dan konteks penerapan terbaik dari 8 jenis media.</p>
+                    <h2 class="text-2xl font-bold text-slate-900">Learning Media Taxonomy Analysis</h2>
+                    <p class="text-slate-500 text-sm mt-1">Comparative evaluation of strengths, limitations, and optimal use cases across 8 media categories.</p>
                 </div>
                 <!-- Search & Category Filters -->
                 <div class="flex flex-wrap items-center gap-2">
-                    <button onclick="filterMedia('all')" class="cat-filter bg-brand-600 text-white text-xs px-3 py-2 rounded-xl font-semibold shadow-sm">Semua</button>
-                    <button onclick="filterMedia('visual')" class="cat-filter bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl font-medium">Visual/Grafis/3D</button>
+                    <button onclick="filterMedia('all')" class="cat-filter bg-brand-600 text-white text-xs px-3 py-2 rounded-xl font-semibold shadow-sm">All Media</button>
+                    <button onclick="filterMedia('visual')" class="cat-filter bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl font-medium">Visual/Graphics/3D</button>
                     <button onclick="filterMedia('audio-video')" class="cat-filter bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl font-medium">Audio & Video</button>
-                    <button onclick="filterMedia('digital')" class="cat-filter bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl font-medium">Komputer/E-Learning/AI</button>
+                    <button onclick="filterMedia('digital')" class="cat-filter bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl font-medium">Computer/E-Learning/AI</button>
                 </div>
             </div>
 
@@ -303,27 +303,27 @@
             </div>
         </section>
 
-        <!-- SECTION 3: STUDI KASUS -->
+        <!-- SECTION 3: CASE STUDIES -->
         <section id="sec-studi-kasus" class="hidden space-y-8 transition-all duration-300">
             <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Aktivitas Kolaboratif Mahasiswa</span>
-                        <h2 class="text-2xl font-bold text-slate-900">Studi Kasus Analisis & Pemilihan Media</h2>
-                        <p class="text-slate-500 text-sm">Pilih kelompok studi kasus untuk menelaah dilema nyata penggunaan media pembelajaran.</p>
+                        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Collaborative Student Activity</span>
+                        <h2 class="text-2xl font-bold text-slate-900">Case Studies: Media Analysis & Selection</h2>
+                        <p class="text-slate-500 text-sm">Select a group case study to examine real-world media selection dilemmas.</p>
                     </div>
                 </div>
 
                 <!-- Group Tabs -->
                 <div class="flex border-b border-slate-200 space-x-2 sm:space-x-4 overflow-x-auto">
                     <button onclick="selectCaseGroup(1)" id="case-tab-1" class="case-tab-btn pb-3 text-sm font-bold border-b-2 border-brand-600 text-brand-600 whitespace-nowrap">
-                        <i class="fa-solid fa-wrench mr-1.5"></i> Kelompok 1: Vokasi / SMK
+                        <i class="fa-solid fa-wrench mr-1.5"></i> Group 1: Vocational / Trade School
                     </button>
                     <button onclick="selectCaseGroup(2)" id="case-tab-2" class="case-tab-btn pb-3 text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">
-                        <i class="fa-solid fa-tree mr-1.5"></i> Kelompok 2: Sekolah Pelosok / 3T
+                        <i class="fa-solid fa-tree mr-1.5"></i> Group 2: Remote / Rural School (Low-Tech)
                     </button>
                     <button onclick="selectCaseGroup(3)" id="case-tab-3" class="case-tab-btn pb-3 text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">
-                        <i class="fa-solid fa-robot mr-1.5"></i> Kelompok 3: Perkotaan & AI
+                        <i class="fa-solid fa-robot mr-1.5"></i> Group 3: Tech-Rich Urban School & AI
                     </button>
                 </div>
 
@@ -334,28 +334,28 @@
             </div>
         </section>
 
-        <!-- SECTION 4: SIMULATOR ACTION -->
+        <!-- SECTION 4: ACTION SIMULATOR -->
         <section id="sec-simulator" class="hidden space-y-8 transition-all duration-300">
             <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
                 <div>
                     <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Interactive Tool</span>
-                    <h2 class="text-2xl font-bold text-slate-900">Simulator Evaluasi Kelayakan Media (ACTION Calculator)</h2>
-                    <p class="text-slate-500 text-sm">Masukkan rencana media pembelajaran Anda dan nilai setiap indikator untuk mendapatkan rekomendasi sistem.</p>
+                    <h2 class="text-2xl font-bold text-slate-900">Media Feasibility Simulator (ACTION Calculator)</h2>
+                    <p class="text-slate-500 text-sm">Enter your planned learning media project and rate each indicator to get an automated feasibility diagnostic report.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <!-- Input Form (7 cols) -->
                     <div class="lg:col-span-7 space-y-5 bg-slate-50 p-6 rounded-2xl border border-slate-200">
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Project / Rencana Media</label>
-                            <input type="text" id="sim-title" placeholder="Contoh: Media AR Anatomi Jantung Kelas XI" class="w-full text-sm px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Project Name / Planned Media</label>
+                            <input type="text" id="sim-title" placeholder="e.g., AR Heart Anatomy Model for Grade 11" class="w-full text-sm px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
                         </div>
 
                         <!-- 6 Sliders for ACTION -->
                         <div class="space-y-4 pt-2">
                             <div>
                                 <div class="flex justify-between text-xs font-semibold mb-1">
-                                    <span class="text-slate-700">1. Access (Kemudahan Akses Siswa)</span>
+                                    <span class="text-slate-700">1. Access (Ease of Student Access)</span>
                                     <span id="val-access" class="text-brand-600 font-bold">3/5</span>
                                 </div>
                                 <input type="range" id="slide-access" min="1" max="5" value="3" oninput="updateSimulator()" class="w-full accent-brand-600">
@@ -363,7 +363,7 @@
 
                             <div>
                                 <div class="flex justify-between text-xs font-semibold mb-1">
-                                    <span class="text-slate-700">2. Cost (Efisiensi & Kelayakan Biaya)</span>
+                                    <span class="text-slate-700">2. Cost (Cost-Effectiveness & Budget)</span>
                                     <span id="val-cost" class="text-emerald-600 font-bold">3/5</span>
                                 </div>
                                 <input type="range" id="slide-cost" min="1" max="5" value="3" oninput="updateSimulator()" class="w-full accent-emerald-600">
@@ -371,7 +371,7 @@
 
                             <div>
                                 <div class="flex justify-between text-xs font-semibold mb-1">
-                                    <span class="text-slate-700">3. Technology (Kesiapan Infrastruktur Listrik/Net)</span>
+                                    <span class="text-slate-700">3. Technology (Infrastructure Readiness)</span>
                                     <span id="val-tech" class="text-amber-600 font-bold">3/5</span>
                                 </div>
                                 <input type="range" id="slide-tech" min="1" max="5" value="3" oninput="updateSimulator()" class="w-full accent-amber-600">
@@ -379,7 +379,7 @@
 
                             <div>
                                 <div class="flex justify-between text-xs font-semibold mb-1">
-                                    <span class="text-slate-700">4. Interactivity (Daya Interaksi & Feedback)</span>
+                                    <span class="text-slate-700">4. Interactivity (Engagement & Feedback)</span>
                                     <span id="val-inter" class="text-indigo-600 font-bold">3/5</span>
                                 </div>
                                 <input type="range" id="slide-inter" min="1" max="5" value="3" oninput="updateSimulator()" class="w-full accent-indigo-600">
@@ -387,7 +387,7 @@
 
                             <div>
                                 <div class="flex justify-between text-xs font-semibold mb-1">
-                                    <span class="text-slate-700">5. Organization (Dukungan Institusi & Pengajar)</span>
+                                    <span class="text-slate-700">5. Organization (Institutional Support)</span>
                                     <span id="val-org" class="text-purple-600 font-bold">3/5</span>
                                 </div>
                                 <input type="range" id="slide-org" min="1" max="5" value="3" oninput="updateSimulator()" class="w-full accent-purple-600">
@@ -395,7 +395,7 @@
 
                             <div>
                                 <div class="flex justify-between text-xs font-semibold mb-1">
-                                    <span class="text-slate-700">6. Novelty (Manfaat Kebaruan Tanpa Distraksi)</span>
+                                    <span class="text-slate-700">6. Novelty (Benefit without Distraction)</span>
                                     <span id="val-nov" class="text-rose-600 font-bold">3/5</span>
                                 </div>
                                 <input type="range" id="slide-nov" min="1" max="5" value="3" oninput="updateSimulator()" class="w-full accent-rose-600">
@@ -406,10 +406,10 @@
                     <!-- Output Score & Report Card (5 cols) -->
                     <div class="lg:col-span-5 flex flex-col justify-between bg-gradient-to-b from-slate-900 to-indigo-950 p-6 sm:p-8 rounded-2xl text-white shadow-xl">
                         <div class="space-y-4">
-                            <span class="text-xs uppercase tracking-widest text-brand-300 font-bold">Hasil Diagnostik ACTION</span>
+                            <span class="text-xs uppercase tracking-widest text-brand-300 font-bold">ACTION Diagnostic Score</span>
                             <div class="flex items-baseline gap-2">
                                 <span id="sim-score-num" class="text-5xl font-black text-white">60</span>
-                                <span class="text-slate-400 font-medium">/ 100 Skor Kelayakan</span>
+                                <span class="text-slate-400 font-medium">/ 100 Feasibility Score</span>
                             </div>
 
                             <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden border border-slate-700">
@@ -417,34 +417,34 @@
                             </div>
 
                             <div id="sim-badge" class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                                Cukup Layak dengan Catatan
+                                Moderately Feasible with Caveats
                             </div>
 
                             <div class="pt-4 border-t border-slate-800 space-y-2">
-                                <h4 class="text-sm font-bold text-slate-200">Rekomendasi Analitis:</h4>
+                                <h4 class="text-sm font-bold text-slate-200">Analytical Recommendation:</h4>
                                 <p id="sim-recommendation" class="text-xs text-slate-300 leading-relaxed">
-                                    Media memiliki tingkat efektivitas sedang. Pastikan hambatan infrastruktur teknis dan akses telah diantisipasi dengan rencana cadangan (backup plan).
+                                    The media shows moderate effectiveness. Ensure infrastructure bottlenecks and access barriers are addressed with contingency backup plans.
                                 </p>
                             </div>
                         </div>
 
                         <button onclick="exportSimulatorReport()" class="mt-6 w-full py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-brand-600/30 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-download"></i> Salin Laporan Ringkas
+                            <i class="fa-solid fa-download"></i> Copy Summary Report
                         </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 5: EVALUASI KUIS -->
+        <!-- SECTION 5: QUIZ ASSESSMENT -->
         <section id="sec-kuis" class="hidden space-y-8 transition-all duration-300">
             <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
                 <div class="flex justify-between items-center border-b border-slate-200 pb-4">
                     <div>
-                        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Formatif Mandiri</span>
-                        <h2 class="text-xl font-bold text-slate-900">Kuis Pemahaman Prinsip & Media</h2>
+                        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Self-Formative Assessment</span>
+                        <h2 class="text-xl font-bold text-slate-900">Media Principles & Selection Quiz</h2>
                     </div>
-                    <span id="quiz-progress" class="text-xs bg-brand-50 text-brand-700 px-3 py-1 rounded-full font-bold border border-brand-200">Soal 1 dari 5</span>
+                    <span id="quiz-progress" class="text-xs bg-brand-50 text-brand-700 px-3 py-1 rounded-full font-bold border border-brand-200">Question 1 of 5</span>
                 </div>
 
                 <!-- Quiz Card Container -->
@@ -455,10 +455,10 @@
                 <!-- Quiz Controls -->
                 <div id="quiz-controls" class="flex justify-between items-center pt-4 border-t border-slate-200">
                     <button onclick="prevQuestion()" id="btn-prev-q" class="px-4 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-xl hover:bg-slate-200 disabled:opacity-50" disabled>
-                        <i class="fa-solid fa-chevron-left mr-1"></i> Sebelumnya
+                        <i class="fa-solid fa-chevron-left mr-1"></i> Previous
                     </button>
                     <button onclick="nextQuestion()" id="btn-next-q" class="px-5 py-2 text-xs font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-500 shadow-md">
-                        Lanjut <i class="fa-solid fa-chevron-right ml-1"></i>
+                        Next <i class="fa-solid fa-chevron-right ml-1"></i>
                     </button>
                 </div>
             </div>
@@ -469,15 +469,15 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 mt-12 py-8">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-2">
-            <p class="font-medium text-slate-700">Materi Perkuliahan Media Pembelajaran — Perguruan Tinggi</p>
-            <p>© 2026 MediaPembelajaran.id — Dirancang untuk Capaian Pembelajaran Mahasiswa S1 Pendidikan.</p>
+            <p class="font-medium text-slate-700">Higher Education Course Module — Learning Media Analysis & Selection</p>
+            <p>© 2026 LearningMedia.edu — Designed for Undergraduate Education Curriculum Outcomes.</p>
         </div>
     </footer>
 
     <!-- Notification Toast Modal -->
     <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-3">
         <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
-        <span id="toast-msg">Notifikasi pesan</span>
+        <span id="toast-msg">Message notification</span>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
@@ -485,222 +485,222 @@
         // Data Edgar Dale's Cone
         const daleData = {
             1: {
-                title: "1. Lambang / Simbol Verbal",
-                desc: "Sangat abstrak. Berupa kata-kata tertulis, rumus, atau istilah konsep. Hanya mengandalkan membaca dan mengingat tanpa stimulasi sensorik konkret.",
-                examples: "Buku teks, modul teori bacaan, rumus matematika murni.",
-                effectiveness: "Tingkat retensi belajar rendah jika tanpa asosiasi visual."
+                title: "1. Verbal Symbols & Written Text",
+                desc: "Highly abstract. Consists of written words, mathematical formulas, or abstract concepts. Relies purely on reading and memory without sensory stimulation.",
+                examples: "Textbooks, theoretical reading modules, pure mathematical formulas.",
+                effectiveness: "Low retention rate if unassisted by visual or practical associations."
             },
             2: {
-                title: "2. Simbol Visual",
-                desc: "Pengalaman belajar menggunakan diagram, grafik, peta konsep, atau bagan yang merepresentasikan alur berpikir secara skematis.",
-                examples: "Infografis peredaran darah, Peta konsep tata surya, Flowchart program.",
-                effectiveness: "Membantu menstrukturkan ide rumit menjadi bentuk skema."
+                title: "2. Visual Symbols",
+                desc: "Learning experiences using diagrams, graphs, concept maps, or flowcharts representing abstract thought processes schematically.",
+                examples: "Circulatory system infographics, Solar system concept maps, Code flowcharts.",
+                effectiveness: "Helps structure complex ideas into clear mental schemata."
             },
             3: {
-                title: "3. Rekaman Audio / Gambar Diam",
-                desc: "Menggunakan rangsangan suara tunggal atau foto/gambar diam berwarna yang mendekati realitas objek sebenarnya.",
-                examples: "Podcast pengajaran bahasa, Foto makro anatomi tumbuhan.",
-                effectiveness: "Fokus melatih kepekaan auditori dan detail visual."
+                title: "3. Still Pictures & Audio Recordings",
+                desc: "Uses single auditory stimuli or still color photographs closely reflecting the real appearance of objects.",
+                examples: "Language learning podcasts, Macro photos of plant anatomy.",
+                effectiveness: "Focuses on developing auditory acuity and visual detail observation."
             },
             4: {
-                title: "4. Gambar Bergerak / Video",
-                desc: "Kombinasi gerak dan suara terintegrasi. Mampu memvisualisasikan proses tak terlihat, seperti pembelahan sel atau kerja mesin.",
-                examples: "Video animasi 3D, Dokumenter sains, Rekaman praktikum.",
-                effectiveness: "Tinggi untuk materi prosedural dan demonstrasi."
+                title: "4. Motion Pictures / Video & Animation",
+                desc: "Integrated motion and sound. Capable of visualising unseen processes such as cellular mitosis or engine combustion cycles.",
+                examples: "3D animation videos, Science documentaries, Recorded lab demonstrations.",
+                effectiveness: "High retention for procedural demonstrations and complex workflows."
             },
             5: {
-                title: "5. Benda Tiruan (Model 3D) & Realia",
-                desc: "Sangat konkret. Pengalaman bersentuhan langsung dengan fisik objek atau alat tiruan berkontur ruang tiga dimensi.",
-                examples: "Model torso manusia, Mesin peraga otomotif, Kunjungan lapangan.",
-                effectiveness: "Sangat tinggi untuk pemahaman kinestetik dan kinestis."
+                title: "5. 3D Models & Realia (Direct Experiences)",
+                desc: "Highly concrete. Direct physical interaction with real objects or 3D dimensional replicas that can be felt, handled, and explored spatially.",
+                examples: "Anatomy torso models, Automotive teaching rigs, Field visits.",
+                effectiveness: "Extremely high retention due to direct sensory and kinesthetic involvement."
             }
         };
 
-        // Data Taksonomi Media
+        // Data Media Taxonomy
         const mediaDatabase = [
             {
                 id: "grafis",
                 category: "visual",
-                name: "Media Grafis (2D)",
+                name: "Graphic Media (2D)",
                 icon: "fa-image",
                 color: "text-blue-600 bg-blue-50",
-                desc: "Visual statis tanpa gerak seperti poster, bagan, infografis, dan komik edukasi.",
-                pros: "Biaya murah, tidak butuh listrik, praktis, efektif untuk ringkasan konsep.",
-                cons: "Tanpa audio/gerak, bidang tampilan terbatas.",
-                bestUse: "Poster alur kerja, bagan organisasi, infografis ringkasan."
+                desc: "Static visual media without motion, including posters, charts, infographics, and educational comics.",
+                pros: "Low cost, no electricity needed, highly portable, excellent for concept summaries.",
+                cons: "Lacks audio and movement; limited display surface area.",
+                bestUse: "Process flowcharts, organizational charts, summary infographics."
             },
             {
                 id: "3d",
                 category: "visual",
-                name: "Media 3 Dimensi (3D)",
+                name: "3D Media & Realia",
                 icon: "fa-cube",
                 color: "text-indigo-600 bg-indigo-50",
-                desc: "Benda nyata (Realia) atau tiruan berniat ruang seperti model, mock-up, dan diorama.",
-                pros: "Sensori konkret (dapat disentuh & diraba), pemahaman keruangan intuitif.",
-                cons: "Biaya produksi tinggi, butuh ruang penyimpanan besar.",
-                bestUse: "Anatomi tubuh biologi, struktur teknik, geometri spatial."
+                desc: "Real objects (Realia) or physical spatial replicas such as models, mock-ups, and dioramas.",
+                pros: "Concrete tactile feedback (touchable), intuitive spatial understanding.",
+                cons: "High production/acquisition cost, requires significant storage space.",
+                bestUse: "Biological anatomy, engineering structures, spatial geometry."
             },
             {
                 id: "proyeksi",
                 category: "visual",
-                name: "Media Proyeksi",
+                name: "Projection Media",
                 icon: "fa-film",
                 color: "text-cyan-600 bg-cyan-50",
-                desc: "Gambar/teks yang dipancarkan ke layar menggunakan proyektor digital.",
-                pros: "Fokus siswa terpusat, fleksibel menampilkan gabungan teks dan gambar besar.",
-                cons: "Sangat tergantung pada listrik, proyektor, dan kondisi ruang gelap.",
-                bestUse: "Presentasi materi kelas, perkuliahan klasikal."
+                desc: "Images or text cast onto a screen via digital projectors or OHP systems.",
+                pros: "Focuses student attention, highly flexible for combining text and large visual imagery.",
+                cons: "Strictly dependent on electricity, projector hardware, and room lighting conditions.",
+                bestUse: "Classroom slide presentations, structured lecture delivery."
             },
             {
                 id: "audio",
                 category: "audio-video",
-                name: "Media Audio",
+                name: "Audio Media",
                 icon: "fa-headphones",
                 color: "text-emerald-600 bg-emerald-50",
-                desc: "Media berbasis suara seperti podcast, rekaman audio, dan radio edukasi.",
-                pros: "Sangat portabel, murah, mengasah imajinasi dan ketajaman pendengaran.",
-                cons: "Komunikasi satu arah, rentan salah tafsir tanpa panduan visual.",
-                bestUse: "Pembelajaran bahasa (Listening), audio drama sejarah, podcast."
+                desc: "Sound-based media including educational podcasts, voice recordings, and radio broadcasts.",
+                pros: "Highly portable, inexpensive, sharpens listening comprehension and imagination.",
+                cons: "One-way communication; vulnerable to misinterpretation without visual cues.",
+                bestUse: "Language listening exercises, audio drama storytelling, educational podcasts."
             },
             {
                 id: "video",
                 category: "audio-video",
-                name: "Media TV / Video",
+                name: "TV & Video Media",
                 icon: "fa-video",
                 color: "text-rose-600 bg-rose-50",
-                desc: "Kombinasi gambar bergerak dan audio yang terintegrasi secara dinamis.",
-                pros: "Sangat dinamis, mempercepat/memperlambat waktu, demonstrasi proses rumit.",
-                cons: "Biaya pembuatan berkualitas tinggi mahal, berisiko pasif jika tanpa tugas.",
-                bestUse: "Demonstrasi praktikum, dokumenter, panduan prosedur."
+                desc: "Integrated combination of dynamic moving pictures and synchronized audio.",
+                pros: "Dynamic timeline control (fast-forward/time-lapse), visualises invisible microscopic processes.",
+                cons: "High production cost for quality videos, risk of passive viewing if unguided.",
+                bestUse: "Practical lab demonstrations, documentaries, step-by-step procedural guides."
             },
             {
                 id: "komputer",
                 category: "digital",
-                name: "Media Komputer & Game",
+                name: "Computer & Educational Games",
                 icon: "fa-laptop-code",
                 color: "text-purple-600 bg-purple-50",
-                desc: "Software interaktif, simulasi digital, dan game edukasi.",
-                pros: "Interaktivitas tinggi, feedback seketika, pembelajaran mandiri (*self-paced*).",
-                cons: "Butuh spesifikasi komputer memadai dan keterampilan digital.",
-                bestUse: "Simulasi laboratorium virtual, latihan soal interaktif."
+                desc: "Interactive software, digital laboratory simulations, and educational game modules.",
+                pros: "High interactivity, instant automated feedback, self-paced learning paths.",
+                cons: "Requires computer hardware specifications and foundational digital literacy.",
+                bestUse: "Virtual lab simulations, interactive drill & practice exercises."
             },
             {
                 id: "elearning",
                 category: "digital",
-                name: "E-Learning & LMS",
+                name: "E-Learning & LMS Platforms",
                 icon: "fa-globe",
                 color: "text-amber-600 bg-amber-50",
-                desc: "Platform pembelajaran terpusat berbasis web (Google Classroom, Moodle).",
-                pros: "Fleksibel ruang dan waktu (Sinkron/Asinkron), dokumentasi nilai rapi.",
-                cons: "Ketergantungan penuh pada internet, butuh kemandirian tinggi.",
-                bestUse: "Pendidikan jarak jauh, pengumpulan tugas terstruktur."
+                desc: "Web-based centralized learning management systems (Google Classroom, Canvas, Moodle).",
+                pros: "Spatial and temporal flexibility (Asynchronous/Synchronous), organized grade records.",
+                cons: "Total dependency on internet connectivity; requires high learner self-discipline.",
+                bestUse: "Distance learning, blended learning courses, centralized assignment submission."
             },
             {
                 id: "ai",
                 category: "digital",
-                name: "AI untuk Pembelajaran",
+                name: "AI for Learning",
                 icon: "fa-robot",
                 color: "text-violet-600 bg-violet-50",
-                desc: "Kecerdasan buatan adaptif (Tutor AI, ChatGPT, Personalize Generator).",
-                pros: "Personalisasi belajar sesuai kecepatan siswa, penyusunan materi kilat.",
-                cons: "Risiko bias data, *hallucination* informasi, isu etika akademik.",
-                bestUse: "Tutor pribadi adaptif, umpan balik tata bahasa, ideasi awal."
+                desc: "Adaptive Artificial Intelligence (AI Tutors, ChatGPT, Adaptive Generator engines).",
+                pros: "Personalized learning at student's individual pace, instant content generation.",
+                cons: "Risk of algorithmic bias, factual hallucination, and academic integrity concerns.",
+                bestUse: "Adaptive private tutoring, grammar & feedback analysis, rapid brainstorming."
             }
         ];
 
-        // Data Studi Kasus
+        // Data Case Studies
         const caseGroupData = {
             1: {
-                title: "Kelompok 1: Vokasi / SMK (Safety & Pembongkaran Mesin)",
-                target: "Siswa SMK Teknik Kendaraan Ringan (30 Siswa)",
-                problem: "Laboratorium bengkel hanya memiliki 2 unit mesin nyata. Risikosaat praktik langsung jika siswa belum paham prosedur keselamatan. Jaringan internet bengkel buruk, namun ada lab komputer LAN.",
+                title: "Group 1: Vocational / Trade School (Safety & Engine Overhaul)",
+                target: "Automotive Engineering Students (30 Students)",
+                problem: "The workshop lab has only 2 real engine units for 30 students. High injury risk if students lack procedure familiarity prior to hands-on practice. Workshop internet is poor, but the school has a functional offline LAN computer lab.",
                 questions: [
-                    "Analisis media terbaik untuk tahap persiapan sebelum praktik fisik langsung?",
-                    "Bagaimana mengevaluasi kombinasi Video Demonstrasi + Simulasi Komputer LAN?",
-                    "Rancangan alur pembelajaran dari teori hingga praktik bengkel?"
+                    "What is the best media strategy for the preparation phase prior to hands-on shop practice?",
+                    "How do you evaluate the combination of Video Demonstration + LAN Computer Simulation using ACTION?",
+                    "Design a step-by-step instructional flow from theory to physical workshop execution."
                 ],
-                solution: "Gunakan **Video Demonstrasi Prosedur** yang di-host di server LAN lokal lab komputer untuk ditonton siswa secara mandiri, dilanjutkan dengan **Simulasi Interaktif Komputer** untuk menguji pemahaman urutan bongkar mesin. Praktik langsung pada 2 unit mesin fisik dilakukan bergiliran untuk siswa yang telah lulus simulasi."
+                solution: "Deploy **Demonstration Videos** hosted locally on the offline LAN server for self-paced viewing, followed by **Interactive Computer Simulations** to test engine overhaul sequences. Physical shop practice on the 2 real engines is conducted in rotating shifts only for students who pass the simulation quiz."
             },
             2: {
-                title: "Kelompok 2: Sekolah Pelosok / 3T (Tanpa Listrik & Internet)",
-                target: "Siswa SMP Daerah Pedalaman",
-                problem: "Tidak ada akses internet dan listrik sering padam. Sekolah tidak memiliki proyektor. Sumber daya alam sekitar (sungai/batuan) sangat melimpah.",
+                title: "Group 2: Remote / Rural School (No Electricity or Internet)",
+                target: "Middle School Students in Remote 3T Regions",
+                problem: "Zero internet access and frequent power outages. The school lacks digital projectors. However, surrounding natural resources (river, sand, stones, recycled materials) are abundant.",
                 questions: [
-                    "Kombinasi media *low-cost / no-cost* apa yang paling memungkinkan?",
-                    "Uji kelayakan media proyeksi dan e-learning menggunakan kerangka ACTION?",
-                    "Bagaimana menciptakan interaktivitas tanpa perangkat digital?"
+                    "Which low-cost or zero-cost media combinations offer the highest learning impact?",
+                    "Evaluate E-Learning and Projection media using the ACTION framework for this scenario.",
+                    "How can you foster active learner interactivity without digital hardware?"
                 ],
-                solution: "Gunakan kombinasi **Media 3D Realia/Diorama** buatan sendiri memanfaatkan bahan alam sekitar (pasir, batu, botol bekas untuk simulasi siklus air) dipadukan dengan **Poster/Media Grafis buatan guru**. Berdasarkan kerangka ACTION, E-Learning bernilai skor 0 pada aspek *Technology* dan *Access*, sehingga tidak layak."
+                solution: "Combine **3D Realia/Diorama Models** built from local natural materials (sand, river stones, plastic bottles to simulate the water cycle) with **Teacher-Made Graphic Charts**. Under the ACTION framework, E-Learning scores 0 on *Technology* and *Access*, rendering digital media unfeasible."
             },
             3: {
-                title: "Kelompok 3: Perkotaan Berfasilitas Lengkap & AI",
-                target: "Siswa SMA Perkotaan (Digital Native)",
-                problem: "Setiap siswa memiliki laptop/tablet dan Wi-Fi cepat. Siswa cepat bosan dengan ceramah slide statis.",
+                title: "Group 3: Tech-Rich Urban School & AI Integration",
+                target: "High School Students (Digital Natives)",
+                problem: "Every student owns a laptop/tablet with high-speed Wi-Fi. However, students quickly get disengaged with static lecture slides and passive presentations.",
                 questions: [
-                    "Bagaimana mengintegrasikan AI Tutor dan Simulasi Interaktif secara etis?",
-                    "Apa risiko bias informasi/halusinasi AI dan bagaimana memitigasinya?",
-                    "Rancangan skenario pembelajaran berbasis Personalized Learning?"
+                    "How can AI Tutors and Interactive Web Simulations be ethically integrated?",
+                    "What are the risks of AI hallucination/bias and how can students mitigate them?",
+                    "Design a personalized learning scenario powered by real-time climate data."
                 ],
-                solution: "Gunakan **Simulasi Iklim Interaktif** berbasis web dipadukan dengan **AI Prompting** di mana siswa berperan sebagai peneliti iklim. Siswa menggunakan AI untuk menganalisis data emisi, namun wajib melakukan *fact-checking* cross-reference dengan jurnal resmi guna menghindari halusinasi AI."
+                solution: "Implement **Interactive Climate Web Simulations** combined with **Guided AI Prompting** where students act as climate researchers. Students leverage AI to analyze emission trends, but are required to cross-reference AI claims with peer-reviewed open journals to build critical evaluation skills."
             }
         };
 
-        // Data Kuis
+        // Data Quiz
         const quizQuestions = [
             {
-                q: "Menurut Kerucut Pengalaman Edgar Dale, jenis media manakah yang memberikan tingkat pengalaman belajar paling KONTRET?",
+                q: "According to Edgar Dale's Cone of Experience, which type of media provides the most CONCRETE learning experience?",
                 options: [
-                    "Bagan dan Peta Konsep Visual",
-                    "Benda Nyata / Realia / Model 3D",
-                    "Rekaman Podcast Audio",
-                    "Buku Teks Teks Verbal"
+                    "Visual Concept Maps and Flowcharts",
+                    "Real Objects / Realia / 3D Physical Models",
+                    "Recorded Audio Podcasts",
+                    "Verbal Textbooks & Text"
                 ],
                 correct: 1,
-                explanation: "Realia dan Benda Tiruan (Model 3D) berada di tingkatan paling bawah kerucut Dale yang memberikan pengalaman sensori fisik langsung (konkret)."
+                explanation: "Realia and 3D physical models sit at the base of Edgar Dale's cone, offering direct sensory and physical interaction (concrete experience)."
             },
             {
-                q: "Dalam kerangka evaluasi ACTION, huruf 'C' merepresentasikan aspek...",
+                q: "In the ACTION evaluation framework, the letter 'C' stands for...",
                 options: [
-                    "Communication (Komunikasi)",
-                    "Cost (Biaya pengadaan & perawatan)",
-                    "Content (Kedalaman isi materi)",
-                    "Creativity (Kreativitas desain)"
+                    "Communication clarity",
+                    "Cost (acquisition & maintenance economy)",
+                    "Content depth",
+                    "Creativity of visual design"
                 ],
                 correct: 1,
-                explanation: "C dalam ACTION singkatan dari Cost (Biaya), yaitu rasionalitas anggaran produksi/pemeliharaan dibanding efektivitas penggunaannya."
+                explanation: "C in ACTION stands for Cost, representing the economic rationality of media production and upkeep relative to user scale."
             },
             {
-                q: "Seorang guru ingin mengajarkan prosedur pembelahan sel yang berlangsung mikro dan tidak terlihat mata. Media paling tepat adalah...",
+                q: "A teacher wants to demonstrate microscopic cell division that cannot be observed with the naked eye. The most effective media is...",
                 options: [
-                    "Buku cerita komik",
-                    "Video animasi 3D / Simulasi gerak",
-                    "Rekaman audio penjelasan",
-                    "Poster statis di dinding"
+                    "Printed story comic book",
+                    "3D Animated Video / Dynamic Motion Simulation",
+                    "Audio explanation recording",
+                    "Static wall poster"
                 ],
                 correct: 1,
-                explanation: "Materi berupa proses dinamis mikro paling efektif disajikan dengan media animasi video/simulasi yang dapat memperlambat dan memperbesar gerakan."
+                explanation: "Dynamic microscopic processes are best visualized through animated video or motion simulations that can slow down and enlarge key movements."
             },
             {
-                q: "Hambatan berupa 'Verbalisme' dalam proses pembelajaran berarti...",
+                q: "What does the term 'Verbalism' mean in instructional communication?",
                 options: [
-                    "Siswa terlalu aktif bertanya di kelas",
-                    "Siswa tahu kata-katanya tetapi tidak memahami makna nyata objeknya",
-                    "Guru tidak menggunakan mikrofon saat mengajar",
-                    "Media pembelajaran terlalu mahal harganya"
+                    "Students asking too many questions in class",
+                    "Students knowing terminology without understanding the real concrete concept",
+                    "The teacher speaking without using a microphone",
+                    "Educational media being overly expensive"
                 ],
                 correct: 1,
-                explanation: "Verbalisme terjadi ketika siswa mampu menyebutkan istilah/kata tanpa memahami wujud konkret atau makna sebenarnya dari konsep tersebut."
+                explanation: "Verbalism occurs when learners memorize words or jargon without comprehending the underlying concrete reality or meaning."
             },
             {
-                q: "Kelemahan utama pemanfaatan Artificial Intelligence (AI) sebagai media pembelajaran mandiri adalah...",
+                q: "What is a major limitation of using Artificial Intelligence (AI) as a self-directed learning media tool?",
                 options: [
-                    "Sangat mahal dan tidak bisa diakses di smartphone",
-                    "Potensi timbulnya halusinasi informasi (data salah) dan bias algoritma",
-                    "Tidak mampu memberikan respons balasan",
-                    "Hanya bisa menampilkan gambar diam"
+                    "It is extremely expensive and inaccessible on smartphones",
+                    "Potential for information hallucination (false facts) and algorithmic bias",
+                    "Inability to generate interactive response text",
+                    "Limitation to rendering static black-and-white images only"
                 ],
                 correct: 1,
-                explanation: "AI generatif memiliki risiko *hallucination* (menghasilkan fakta palsu yang tampak meyakinkan) sehingga membutuhkan daya kritis siswa untuk memverifikasi."
+                explanation: "Generative AI poses a risk of hallucination (generating convincing false data), requiring critical verification skills from learners."
             }
         ];
 
@@ -750,14 +750,14 @@
             const detailPanel = document.getElementById('dale-detail-panel');
             detailPanel.innerHTML = `
                 <div class="space-y-3">
-                    <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Detail Kerucut Edgar Dale</span>
+                    <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Edgar Dale Cone Detail</span>
                     <h4 class="text-base font-bold text-slate-900">${info.title}</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">${info.desc}</p>
                     <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs">
-                        <span class="font-bold text-slate-800">Contoh Media:</span> ${info.examples}
+                        <span class="font-bold text-slate-800">Media Examples:</span> ${info.examples}
                     </div>
                     <div class="p-3 bg-indigo-50/70 rounded-xl border border-indigo-100 text-xs text-indigo-900">
-                        <span class="font-bold">Retensi Belajar:</span> ${info.effectiveness}
+                        <span class="font-bold">Retention Impact:</span> ${info.effectiveness}
                     </div>
                 </div>
             `;
@@ -786,16 +786,16 @@
                         
                         <div class="space-y-2 pt-2 border-t border-slate-100 text-xs">
                             <div class="text-emerald-700">
-                                <span class="font-bold"><i class="fa-solid fa-plus-circle mr-1"></i> Kelebihan:</span> ${m.pros}
+                                <span class="font-bold"><i class="fa-solid fa-plus-circle mr-1"></i> Advantages:</span> ${m.pros}
                             </div>
                             <div class="text-rose-700">
-                                <span class="font-bold"><i class="fa-solid fa-minus-circle mr-1"></i> Keterbatasan:</span> ${m.cons}
+                                <span class="font-bold"><i class="fa-solid fa-minus-circle mr-1"></i> Limitations:</span> ${m.cons}
                             </div>
                         </div>
                     </div>
 
                     <div class="pt-3 border-t border-slate-100 text-xs bg-slate-50 -mx-6 -mb-6 p-4 rounded-b-2xl">
-                        <span class="font-bold text-slate-700">Penggunaan Terbaik:</span>
+                        <span class="font-bold text-slate-700">Optimal Use Case:</span>
                         <p class="text-slate-600 mt-0.5">${m.bestUse}</p>
                     </div>
                 `;
@@ -834,11 +834,11 @@
                         <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2.5 py-1 rounded-md">${c.target}</span>
                     </div>
                     <p class="text-xs text-slate-600 leading-relaxed bg-white p-4 rounded-xl border border-slate-200">
-                        <b>Dilema Kondisi:</b> ${c.problem}
+                        <b>Dilemma & Context:</b> ${c.problem}
                     </p>
 
                     <div class="space-y-2 pt-2">
-                        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Pertanyaan Analisis Diskusi:</h4>
+                        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Analytical Discussion Questions:</h4>
                         <ul class="space-y-2 text-xs text-slate-700">
                             ${c.questions.map((q, idx) => `
                                 <li class="flex items-start gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
@@ -851,10 +851,10 @@
 
                     <div class="pt-4 border-t border-slate-200">
                         <button onclick="toggleCaseAnswer()" id="btn-toggle-answer" class="text-xs font-bold text-brand-600 hover:text-brand-800 flex items-center gap-2 focus:outline-none">
-                            <i class="fa-solid fa-key"></i> Tampilkan Rekomendasi Solusi Dosen
+                            <i class="fa-solid fa-key"></i> Reveal Instructor Solution Guide
                         </button>
                         <div id="case-answer-box" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs rounded-xl space-y-1">
-                            <span class="font-bold text-emerald-900 block mb-1">Panduan Jawaban Ideal:</span>
+                            <span class="font-bold text-emerald-900 block mb-1">Recommended Solution:</span>
                             <p class="leading-relaxed">${c.solution}</p>
                         </div>
                     </div>
@@ -867,10 +867,10 @@
             const btn = document.getElementById('btn-toggle-answer');
             if (box.classList.contains('hidden')) {
                 box.classList.remove('hidden');
-                btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Sembunyikan Panduan Jawaban`;
+                btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Instructor Solution`;
             } else {
                 box.classList.add('hidden');
-                btn.innerHTML = `<i class="fa-solid fa-key"></i> Tampilkan Rekomendasi Solusi Dosen`;
+                btn.innerHTML = `<i class="fa-solid fa-key"></i> Reveal Instructor Solution Guide`;
             }
         }
 
@@ -900,23 +900,23 @@
 
             if (score >= 80) {
                 badge.className = "inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
-                badge.innerText = "SANGAT LAYAK IMPLEMENTASI";
-                rec.innerText = "Media memiliki kelayakan sangat tinggi dari segi kemudahan akses, kesiapan teknis, dan efisiensi biaya. Siap diimplementasikan dalam pembelajaran.";
+                badge.innerText = "HIGHLY FEASIBLE FOR IMPLEMENTATION";
+                rec.innerText = "Media demonstrates high feasibility across access, technical readiness, and cost-effectiveness. Recommended for full deployment.";
             } else if (score >= 55) {
                 badge.className = "inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30";
-                badge.innerText = "CUUKUP LAYAK DENGAN CATATAN";
-                rec.innerText = "Media cukup baik namun memiliki kendala pada beberapa aspek (misal: keterbatasan listrik/internet atau biaya). Siapkan strategi mitigasi cadangan.";
+                badge.innerText = "MODERATELY FEASIBLE WITH CAVEATS";
+                rec.innerText = "Media shows promise but faces specific constraints (e.g., internet, power, or budget). Prepare contingency backup plans.";
             } else {
                 badge.className = "inline-block px-3 py-1 rounded-full text-xs font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30";
-                badge.innerText = "KURANG LAYAK / TINGGI RISIKO";
-                rec.innerText = "Terdapat hambatan serius pada akses atau teknologi pendukung. Disarankan menyederhanakan jenis media ke bentuk yang lebih konvensional.";
+                badge.innerText = "LOW FEASIBILITY / HIGH RISK";
+                rec.innerText = "Severe roadblocks identified in infrastructure or access. It is advisable to simplify media selection to conventional options.";
             }
         }
 
         function exportSimulatorReport() {
-            const title = document.getElementById('sim-title').value || "Project Media Pembelajaran";
+            const title = document.getElementById('sim-title').value || "Learning Media Project";
             const score = document.getElementById('sim-score-num').innerText;
-            const text = `[Laporan Evaluasi ACTION]\nProject: ${title}\nSkor Kelayakan: ${score}/100\nTanggal Evaluasi: 2026`;
+            const text = `[ACTION Evaluation Report]\nProject: ${title}\nFeasibility Score: ${score}/100\nEvaluation Date: 2026`;
             
             // Clipboard Copying Pattern
             const dummy = document.createElement("textarea");
@@ -926,13 +926,13 @@
             document.execCommand("copy");
             document.body.removeChild(dummy);
 
-            showToast("Ringkasan laporan berhasil disalin ke clipboard!");
+            showToast("Summary report successfully copied to clipboard!");
         }
 
         function renderQuizQuestion() {
             const q = quizQuestions[currentQuizIndex];
             const container = document.getElementById('quiz-card-container');
-            document.getElementById('quiz-progress').innerText = `Soal ${currentQuizIndex + 1} dari ${quizQuestions.length}`;
+            document.getElementById('quiz-progress').innerText = `Question ${currentQuizIndex + 1} of ${quizQuestions.length}`;
 
             const selected = userQuizAnswers[currentQuizIndex];
 
@@ -954,7 +954,7 @@
 
                     ${selected !== undefined ? `
                         <div class="p-4 rounded-xl border text-xs space-y-1 ${selected === q.correct ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-rose-50 border-rose-200 text-rose-900'}">
-                            <span class="font-bold block">${selected === q.correct ? '✓ Jawaban Anda Benar!' : '✗ Jawaban Belum Tepat'}</span>
+                            <span class="font-bold block">${selected === q.correct ? '✓ Correct Answer!' : '✗ Incorrect Choice'}</span>
                             <p>${q.explanation}</p>
                         </div>
                     ` : ''}
@@ -964,9 +964,9 @@
             document.getElementById('btn-prev-q').disabled = currentQuizIndex === 0;
             const nextBtn = document.getElementById('btn-next-q');
             if (currentQuizIndex === quizQuestions.length - 1) {
-                nextBtn.innerHTML = `Selesai & Skor <i class="fa-solid fa-check mr-1"></i>`;
+                nextBtn.innerHTML = `Finish & Score <i class="fa-solid fa-check mr-1"></i>`;
             } else {
-                nextBtn.innerHTML = `Lanjut <i class="fa-solid fa-chevron-right ml-1"></i>`;
+                nextBtn.innerHTML = `Next <i class="fa-solid fa-chevron-right ml-1"></i>`;
             }
         }
 
@@ -993,13 +993,13 @@
                         <div class="w-16 h-16 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center text-2xl mx-auto font-bold">
                             <i class="fa-solid fa-trophy"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900">Hasil Evaluasi Formatif</h3>
+                        <h3 class="text-2xl font-bold text-slate-900">Formative Assessment Results</h3>
                         <p class="text-4xl font-extrabold text-brand-600">${finalScore} <span class="text-sm text-slate-400 font-normal">/ 100</span></p>
                         <p class="text-xs text-slate-600 max-w-sm mx-auto">
-                            Anda menjawab benar <b>${correctCount}</b> dari <b>${quizQuestions.length}</b> pertanyaan.
+                            You answered <b>${correctCount}</b> out of <b>${quizQuestions.length}</b> questions correctly.
                         </p>
                         <button onclick="resetQuiz()" class="px-5 py-2.5 bg-brand-600 text-white font-bold text-xs rounded-xl hover:bg-brand-500 shadow-md">
-                            Ulangi Kuis
+                            Retake Quiz
                         </button>
                     </div>
                 `;
