@@ -1,137 +1,229 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modul 1: Analisis Kebutuhan & Karakteristik Peserta Didik</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --border-color: #ddd;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            border-bottom: 5px solid var(--secondary-color);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Sidebar / Daftar Isi */
-        aside {
-            flex: 1 1 250px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 20px;
-            height: fit-content;
-        }
-
-        aside h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 5px;
-        }
-
-        aside ul {
-            list-style: none;
-        }
-
-        aside ul li {
-            margin-bottom: 10px;
-        }
-
-        aside ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        aside ul li a:hover {
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        /* Main Content */
-        main {
-            flex: 3 1 600px;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            margin-top: 30px;
-        }
-
-        h3 {
-            color: var(--secondary-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        ul, ol {
-            margin-bottom: 15px;
-            padding-left: 20px;
-        }
-
-        li
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Modul pembelajaran Media Pembelajaran: analisis kebutuhan, karakteristik peserta didik, dan perumusan tujuan pembelajaran.">
+<title>Modul 1 | Analisis Kebutuhan Media Pembelajaran</title>
+<style>
+:root{--navy:#152642;--blue:#2857a4;--teal:#16a6a1;--gold:#f4b942;--ink:#243247;--muted:#64748b;--paper:#f5f7fb;--line:#dfe6ef;--white:#fff;--shadow:0 12px 30px rgba(21,38,66,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue)}button,input,textarea,select{font:inherit}.topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{max-width:1180px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:850;color:var(--navy);letter-spacing:-.03em}.brand span{color:var(--teal)}.navlinks{display:flex;gap:7px;flex-wrap:wrap}.navlinks a{text-decoration:none;font-size:.86rem;font-weight:650;color:var(--muted);padding:7px 10px;border-radius:9px}.navlinks a:hover{background:#edf4ff;color:var(--blue)}.hero{background:linear-gradient(120deg,#14243f,#2857a4 68%,#16a6a1);color:white;padding:64px 22px 58px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff30;border-radius:50%;right:-80px;top:-150px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 75px #ffffff0b}.hero-inner{max-width:1120px;margin:auto;position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.78rem;color:#bdebe7}.hero h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.12;max-width:850px;letter-spacing:-.04em;margin:12px 0 18px}.hero p{max-width:780px;color:#e4edfa;font-size:1.08rem}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.pill{border:1px solid #ffffff45;background:#ffffff12;padding:7px 12px;border-radius:999px;font-size:.9rem}.progress-wrap{height:5px;background:#dce5f1}.progress{height:5px;width:0;background:var(--gold);transition:width .2s}.layout{max-width:1180px;margin:28px auto;padding:0 22px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:25px}.sidebar{align-self:start;position:sticky;top:83px;background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}.sidebar h3{margin:0 0 10px;font-size:.9rem;color:var(--navy)}.sidebar a{display:block;text-decoration:none;color:var(--muted);padding:7px 9px;border-radius:8px;font-size:.9rem}.sidebar a:hover{background:#eef5ff;color:var(--blue)}main{min-width:0}.section{background:white;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,34px);margin-bottom:22px;box-shadow:var(--shadow)}.section h2{margin:0 0 15px;color:var(--navy);font-size:1.55rem;letter-spacing:-.025em}.section h3{color:var(--blue);margin-top:25px}.section h4{margin-bottom:5px;color:var(--navy)}.lead{font-size:1.05rem;color:#475569}.callout{border-left:4px solid var(--teal);background:#effbf9;padding:15px 18px;border-radius:0 12px 12px 0;margin:18px 0}.grid2,.grid3,.grid4{display:grid;gap:14px;margin:18px 0}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.mini-card{border:1px solid var(--line);background:#fbfcff;border-radius:13px;padding:16px}.mini-card .num{font-size:1.35rem;font-weight:850;color:var(--teal)}.mini-card h3,.mini-card h4{margin:5px 0;color:var(--navy)}.mini-card p{margin:5px 0;color:var(--muted);font-size:.94rem}.table-wrap{overflow-x:auto;margin:15px 0}table{width:100%;border-collapse:collapse;min-width:570px;font-size:.94rem}th,td{padding:12px 13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#edf4ff;color:var(--navy)}tr:last-child td{border-bottom:0}.flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:20px 0}.flow-step{flex:1 1 150px;border-radius:12px;padding:16px;text-align:center;background:#edf4ff;border:1px solid #d5e3fa;font-weight:750;color:var(--navy)}.flow-step strong{display:block;color:var(--teal);font-size:1.2rem}.arrow{align-self:center;color:var(--teal);font-size:1.5rem;font-weight:900}.abcd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}.abcd div{padding:15px;border-radius:13px;background:#f5f8fd;border-top:4px solid var(--teal)}.abcd b{font-size:1.7rem;color:var(--blue)}.abcd p{margin:5px 0;font-size:.9rem}.highlight{background:#fff8e8;border:1px solid #f6dfaa;border-radius:12px;padding:16px}.tag{display:inline-block;background:#e5f7f5;color:#087e79;font-size:.78rem;font-weight:800;padding:4px 8px;border-radius:6px}.btn{border:0;border-radius:10px;padding:10px 15px;background:var(--blue);color:white;font-weight:750;cursor:pointer}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:#eaf0f8;color:var(--navy)}.btn.teal{background:var(--teal)}.btn-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.quiz-q{padding:16px 0;border-bottom:1px solid var(--line)}.quiz-q:last-child{border:0}.quiz-q p{font-weight:750;margin:0 0 9px}.option{display:flex;gap:9px;align-items:flex-start;padding:7px 9px;border-radius:8px;cursor:pointer}.option:hover{background:#f4f7fb}.option input{margin-top:6px;accent-color:var(--blue)}.feedback{margin-top:12px;padding:13px;border-radius:10px;display:none}.feedback.show{display:block}.correct{background:#eaf8ef;color:#17643a}.incorrect{background:#fff0ed;color:#9b2c1d}.field{display:flex;flex-direction:column;gap:5px;margin:12px 0}.field label{font-weight:700;font-size:.92rem}.field input,.field textarea,.field select{border:1px solid #cbd5e1;border-radius:9px;padding:10px 12px;background:white;width:100%}.field textarea{min-height:80px;resize:vertical}.worksheet{background:#fbfcff;border:1px dashed #aabbd1;border-radius:13px;padding:18px}.result{white-space:pre-wrap;background:#f0f7ff;border-radius:12px;padding:16px;margin-top:14px;display:none}.result.show{display:block}.footer{background:var(--navy);color:#d9e4f5;padding:30px 22px;text-align:center}.footer strong{color:white}.small{font-size:.88rem;color:var(--muted)}.backtop{position:fixed;bottom:18px;right:18px;border:0;border-radius:50%;width:44px;height:44px;background:var(--teal);color:white;font-size:1.25rem;box-shadow:var(--shadow);cursor:pointer}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static}.sidebar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{align-items:flex-start;flex-direction:column}.hero{padding-top:45px}}
+@media(max-width:540px){.grid2,.grid3,.grid4,.abcd{grid-template-columns:1fr}.sidebar nav{grid-template-columns:1fr 1fr}.section{padding:19px}.hero h1{font-size:2.2rem}.arrow{transform:rotate(90deg);width:100%;text-align:center}}
+@media print{.topbar,.sidebar,.btn,.backtop{display:none!important}.layout{display:block;margin:0;max-width:none}.section{box-shadow:none;break-inside:avoid}.hero{background:#fff;color:#111;padding:20px}.hero p,.eyebrow{color:#333}.section{border:0}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="nav">
+  <div class="brand">MEDIA<span>LAB</span> <span style="color:#64748b;font-weight:600">/ Modul 01</span></div>
+  <nav class="navlinks" aria-label="Navigasi utama">
+   <a href="#pendahuluan">Pendahuluan</a><a href="#kegiatan1">Profil Siswa</a><a href="#kegiatan2">Tujuan</a><a href="#kegiatan3">Analisis Media</a><a href="#tes">Tes Formatif</a>
+  </nav>
+ </div>
+ <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+</header>
+<section class="hero">
+ <div class="hero-inner">
+  <div class="eyebrow">Modul Pembelajaran • Teknologi Pendidikan</div>
+  <h1>Analisis Kebutuhan, Karakteristik Peserta Didik, dan Perumusan Tujuan Pembelajaran</h1>
+  <p>Landasan sistematis untuk merancang media pembelajaran yang relevan, terukur, inklusif, dan sesuai dengan kebutuhan belajar.</p>
+  <div class="meta"><span class="pill">Mata Kuliah: Media Pembelajaran</span><span class="pill">Penyusun: Tim Dosen Teknologi Pendidikan</span><span class="pill">Modul 1</span></div>
+ </div>
+</section>
+<div class="layout">
+<aside class="sidebar">
+ <h3>DAFTAR ISI</h3>
+ <nav>
+  <a href="#pendahuluan">1. Pendahuluan</a><a href="#capaian">2. Capaian Pembelajaran</a><a href="#kegiatan1">3. Kegiatan Belajar 1</a><a href="#kegiatan2">4. Kegiatan Belajar 2</a><a href="#kegiatan3">5. Kegiatan Belajar 3</a><a href="#rangkuman">6. Rangkuman</a><a href="#lkm">7. LKM & Praktik</a><a href="#tes">8. Tes Formatif</a><a href="#pustaka">9. Daftar Pustaka</a>
+ </nav>
+ <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+ <p class="small">Saran belajar: pelajari tiap kegiatan, kerjakan LKM, lalu uji pemahaman melalui tes formatif.</p>
+ <button class="btn secondary" onclick="window.print()">Cetak / Simpan PDF</button>
+</aside>
+<main>
+<section class="section" id="pendahuluan">
+ <span class="tag">Orientasi Modul</span><h2>1. Pendahuluan</h2>
+ <p class="lead">Pemilihan atau pengembangan media pembelajaran bukan proses acak berdasarkan preferensi pribadi pengajar. Media yang efektif lahir dari proses sistematis yang berlandaskan desain instruksional (<em>instructional design</em>).</p>
+ <p>Tahap analisis awal merupakan bagian penting dalam siklus pengembangan media, misalnya pada model ADDIE (<em>Analysis</em>) dan ASSURE (<em>Analyze Learners</em>). Tanpa analisis karakteristik peserta didik dan tujuan pembelajaran, media berisiko tidak relevan, terlalu rumit, atau tidak mendukung pencapaian kompetensi.</p>
+ <div class="callout"><strong>Gagasan utama:</strong> media dipilih karena mampu membantu mengatasi kebutuhan belajar dan mencapai tujuan pembelajaran—bukan semata-mata karena teknologinya sedang populer.</div>
+ <h3>Peta alur modul</h3>
+ <div class="flow"><div class="flow-step"><strong>01</strong>Analisis peserta didik</div><div class="arrow">→</div><div class="flow-step"><strong>02</strong>Rumusan tujuan</div><div class="arrow">→</div><div class="flow-step"><strong>03</strong>Analisis kesenjangan</div><div class="arrow">→</div><div class="flow-step"><strong>04</strong>Justifikasi media</div></div>
+</section>
+<section class="section" id="capaian">
+ <h2>2. Capaian Pembelajaran (Sub-CPMK)</h2>
+ <p>Setelah mempelajari modul dan menyelesaikan tugas, mahasiswa diharapkan mampu:</p>
+ <div class="grid2">
+  <div class="mini-card"><div class="num">01</div><h4>Analisis holistik</h4><p>Menganalisis kebutuhan, karakteristik peserta didik, dan tujuan pembelajaran secara menyeluruh.</p></div>
+  <div class="mini-card"><div class="num">02</div><h4>Identifikasi profil</h4><p>Mengidentifikasi profil peserta didik secara tepat dengan pendekatan metodologis.</p></div>
+  <div class="mini-card"><div class="num">03</div><h4>Tujuan terukur</h4><p>Merumuskan tujuan terukur dengan model ABCD dan Taksonomi Bloom revisi.</p></div>
+  <div class="mini-card"><div class="num">04</div><h4>Justifikasi media</h4><p>Menjelaskan dan menjustifikasi kebutuhan media berdasarkan hasil analisis.</p></div>
+ </div>
+</section>
+<section class="section" id="kegiatan1">
+ <span class="tag">Kegiatan Belajar 1</span><h2>3. Identifikasi & Analisis Profil Peserta Didik</h2>
+ <p class="lead">Perancang media perlu memahami siapa yang akan belajar, apa yang telah mereka ketahui, bagaimana mereka mengakses pembelajaran, serta kendala yang mungkin dihadapi.</p>
+ <h3>A. Empat dimensi karakteristik peserta didik</h3>
+ <div class="grid2">
+  <div class="mini-card"><h4>1. Karakteristik umum</h4><p>Usia, tahap perkembangan kognitif, jenjang/kelas, bahasa, serta latar belakang sosial-ekonomi. Pertimbangkan perkembangan kognitif secara kontekstual, bukan sebagai label mutlak.</p></div>
+  <div class="mini-card"><h4>2. Kompetensi awal</h4><p>Pengetahuan prasyarat, keterampilan teknis dan literasi digital, pengalaman belajar, serta miskonsepsi yang mungkin sudah dimiliki.</p></div>
+  <div class="mini-card"><h4>3. Preferensi belajar</h4><p>Preferensi terhadap teks, audio, visual, praktik, atau aktivitas interaktif. VARK dapat menjadi salah satu cara membicarakan preferensi, bukan dasar untuk melabeli siswa atau membatasi cara mengajar.</p></div>
+  <div class="mini-card"><h4>4. Kondisi & lingkungan</h4><p>Kebutuhan aksesibilitas, disabilitas, bahasa, ketersediaan gawai, kestabilan internet, fasilitas sekolah, dan dukungan lingkungan belajar.</p></div>
+ </div>
+ <h3>B. Metode pengumpulan data</h3>
+ <div class="table-wrap"><table><thead><tr><th>Metode</th><th>Teknik pelaksanaan</th><th>Data yang dihasilkan</th></tr></thead><tbody>
+ <tr><td><strong>Tes diagnostik</strong></td><td>Pre-test singkat sebelum pembelajaran</td><td>Penguasaan pengetahuan prasyarat dan miskonsepsi</td></tr>
+ <tr><td><strong>Angket/kuesioner</strong></td><td>Formulir digital atau lembar cetak, pilihan ganda dan skala</td><td>Minat, preferensi, akses perangkat, dan pengalaman</td></tr>
+ <tr><td><strong>Observasi</strong></td><td>Mengamati interaksi dan keterlibatan pada pembelajaran sebelumnya</td><td>Partisipasi, pola interaksi, dan kendala yang tampak</td></tr>
+ <tr><td><strong>Wawancara terstruktur</strong></td><td>Wawancara sampel peserta didik atau guru</td><td>Hambatan spesifik, kebutuhan, dan faktor motivasional</td></tr>
+ </tbody></table></div>
+ <div class="highlight"><strong>Contoh penerapan:</strong> sebelum membuat media tentang pecahan, guru memberikan tes diagnostik singkat. Jika banyak siswa belum memahami makna pembilang dan penyebut, media perlu memberi representasi visual dasar sebelum masuk ke operasi pecahan.</div>
+ <h3>Latihan cepat</h3>
+ <p>Guru akan membuat media untuk siswa kelas VII. Informasi yang paling langsung menunjukkan kompetensi awal adalah...</p>
+ <div class="quiz-q" id="quickQ"><label class="option"><input type="radio" name="quick" value="a"> A. Warna favorit siswa</label><label class="option"><input type="radio" name="quick" value="b"> B. Hasil tes diagnostik materi prasyarat</label><label class="option"><input type="radio" name="quick" value="c"> C. Merek gawai yang paling populer</label><button class="btn secondary" onclick="checkQuick()">Periksa jawaban</button><div id="quickFeedback" class="feedback"></div></div>
+</section>
+<section class="section" id="kegiatan2">
+ <span class="tag">Kegiatan Belajar 2</span><h2>4. Pendeskripsian & Perumusan Tujuan Pembelajaran</h2>
+ <h3>A. Tujuan sebagai kompas pemilihan media</h3>
+ <p>Tujuan pembelajaran menjelaskan kemampuan yang diharapkan setelah kegiatan belajar. Pemilihan media harus mengikuti kemampuan yang dituju. Tujuan analisis/evaluasi dapat memerlukan simulasi atau studi kasus interaktif; tujuan keterampilan prosedural dapat didukung video demonstrasi yang dapat diputar ulang.</p>
+ <h3>B. Model perumusan tujuan ABCD</h3>
+ <div class="abcd">
+  <div><b>A</b><h4>Audience</h4><p>Siapa peserta didik yang menjadi sasaran?</p><small>Contoh: siswa kelas V SD.</small></div>
+  <div><b>B</b><h4>Behavior</h4><p>Perilaku/kemampuan yang dapat diamati dan diukur.</p><small>Contoh: menganalisis tahapan.</small></div>
+  <div><b>C</b><h4>Condition</h4><p>Kondisi, sumber, alat, atau bantuan saat performa ditunjukkan.</p><small>Contoh: setelah mengamati infografis.</small></div>
+  <div><b>D</b><h4>Degree</h4><p>Standar minimal atau kriteria keberhasilan.</p><small>Contoh: benar minimal 4 dari 5 butir.</small></div>
+ </div>
+ <div class="callout"><strong>Contoh tujuan lengkap:</strong> “Setelah mengamati infografis interaktif siklus air (C), siswa kelas V SD (A) dapat menganalisis empat tahapan utama siklus air (B) dengan benar sekurang-kurangnya 80% berdasarkan rubrik penilaian (D).”</div>
+ <p><strong>Catatan:</strong> urutan penulisan unsur ABCD dapat bervariasi. Pastikan keempat unsur jelas dan selaras dengan asesmen.</p>
+ <h3>C. Taksonomi Bloom revisi dan implikasi media</h3>
+ <div class="table-wrap"><table><thead><tr><th>Tingkat</th><th>Contoh kata kerja operasional</th><th>Contoh media/aktivitas yang mungkin sesuai</th></tr></thead><tbody>
+ <tr><td><strong>C1 Mengingat</strong></td><td>Menyebutkan, mengenali, mendefinisikan</td><td>Kartu belajar, kuis, infografis ringkas</td></tr>
+ <tr><td><strong>C2 Memahami</strong></td><td>Menjelaskan, merangkum, mengelompokkan</td><td>Diagram, video penjelasan, slide visual</td></tr>
+ <tr><td><strong>C3 Menerapkan</strong></td><td>Mengoperasikan, menggunakan, menunjukkan</td><td>Video tutorial, modul interaktif, latihan terpandu</td></tr>
+ <tr><td><strong>C4 Menganalisis</strong></td><td>Membandingkan, membedakan, mengorganisasi</td><td>Matriks perbandingan, simulasi, e-book interaktif</td></tr>
+ <tr><td><strong>C5 Mengevaluasi</strong></td><td>Menilai, mengkritik, membuktikan</td><td>Studi kasus, forum diskusi, rubrik penilaian</td></tr>
+ <tr><td><strong>C6 Menciptakan</strong></td><td>Merancang, menyusun, mengonstruksi</td><td>Perangkat kreasi multimedia, kanvas kolaboratif</td></tr>
+ </tbody></table></div>
+ <p class="small">Media pada tabel adalah alternatif, bukan pasangan wajib. Pilih berdasarkan tujuan, karakteristik materi, kondisi peserta didik, dan sumber daya.</p>
+ <h3>Generator tujuan ABCD</h3>
+ <p>Isi keempat unsur berikut untuk menyusun draf tujuan pembelajaran.</p>
+ <div class="field"><label for="audience">Audience (A)</label><input id="audience" placeholder="Contoh: siswa kelas V SD"></div>
+ <div class="field"><label for="behavior">Behavior (B)</label><input id="behavior" placeholder="Contoh: membandingkan pecahan sederhana"></div>
+ <div class="field"><label for="condition">Condition (C)</label><input id="condition" placeholder="Contoh: setelah menggunakan garis bilangan interaktif"></div>
+ <div class="field"><label for="degree">Degree (D)</label><input id="degree" placeholder="Contoh: benar minimal 4 dari 5 soal"></div>
+ <div class="btn-row"><button class="btn teal" onclick="generateObjective()">Buat rumusan tujuan</button><button class="btn secondary" onclick="clearObjective()">Hapus isian</button></div>
+ <div id="objectiveResult" class="result" aria-live="polite"></div>
+</section>
+<section class="section" id="kegiatan3">
+ <span class="tag">Kegiatan Belajar 3</span><h2>5. Analisis Kebutuhan Media Pembelajaran (<em>Need Analysis</em>)</h2>
+ <h3>A. Konsep analisis kebutuhan</h3>
+ <p>Analisis kebutuhan media adalah proses mengidentifikasi kesenjangan (<em>gap</em>) antara kondisi pembelajaran saat ini (<em>actual condition</em>) dan kondisi yang diharapkan (<em>desired condition</em>), lalu menentukan apakah media merupakan solusi yang tepat.</p>
+ <div class="flow"><div class="flow-step"><strong>1. Aktual</strong>Materi sulit dibayangkan, motivasi rendah, proses tidak terlihat</div><div class="arrow">→</div><div class="flow-step"><strong>2. Kesenjangan</strong>Siswa belum memahami proses atau konsep target</div><div class="arrow">→</div><div class="flow-step"><strong>3. Ideal</strong>Konsep dipahami melalui representasi yang sesuai</div><div class="arrow">→</div><div class="flow-step"><strong>4. Solusi</strong>Media dipilih setelah kelayakan dan kendala diperiksa</div></div>
+ <div class="callout"><strong>Penting:</strong> tidak semua masalah belajar diselesaikan dengan media. Kesenjangan mungkin juga berasal dari prasyarat yang belum dikuasai, strategi mengajar, waktu belajar, aksesibilitas, atau asesmen yang tidak selaras.</div>
+ <h3>B. Langkah menentukan kebutuhan media</h3>
+ <div class="grid3">
+  <div class="mini-card"><h4>1. Analisis kendala</h4><p>Periksa durasi, anggaran, perangkat, listrik, internet, kompetensi guru, serta kebijakan sekolah.</p></div>
+  <div class="mini-card"><h4>2. Analisis materi</h4><p>Tentukan apakah materi abstrak/konkret, statis/dinamis, prosedural, spasial, atau memerlukan latihan berulang.</p></div>
+  <div class="mini-card"><h4>3. Justifikasi media</h4><p>Cocokkan profil peserta didik, tujuan, materi, aksesibilitas, dan kondisi lapangan sebelum merekomendasikan media.</p></div>
+ </div>
+ <h3>C. Contoh matriks justifikasi</h3>
+ <div class="table-wrap"><table><thead><tr><th>Indikator</th><th>Temuan/kondisi</th><th>Implikasi media</th></tr></thead><tbody>
+ <tr><td>Profil siswa</td><td>Siswa terbiasa menggunakan smartphone dan membutuhkan petunjuk visual</td><td>Antarmuka sederhana, responsif, dengan visual dan instruksi yang jelas</td></tr>
+ <tr><td>Tujuan C4</td><td>Siswa perlu menganalisis perubahan cuaca</td><td>Visualisasi data, animasi proses, atau simulasi dengan pertanyaan analitis</td></tr>
+ <tr><td>Keterbatasan</td><td>Internet sekolah tidak stabil</td><td>Media offline, bahan cetak pendamping, atau konten yang dapat diunduh</td></tr>
+ <tr><td>Rekomendasi</td><td>Perlu menghubungkan konsep dan menganalisis proses</td><td>Mobile learning offline dengan animasi 2D interaktif dan asesmen singkat</td></tr>
+ </tbody></table></div>
+ <h3>Latihan: tentukan arah rekomendasi</h3>
+ <div class="field"><label for="material">Sifat materi</label><select id="material"><option value="">Pilih...</option><option>Abstrak dan dinamis</option><option>Konkret dan prosedural</option><option>Faktual dan perlu diingat</option><option>Kompleks dan perlu dianalisis</option></select></div>
+ <div class="field"><label for="internet">Kondisi akses</label><select id="internet"><option value="">Pilih...</option><option>Internet stabil dan perangkat tersedia</option><option>Internet terbatas atau tidak stabil</option><option>Perangkat digital terbatas</option></select></div>
+ <button class="btn teal" onclick="recommendMedia()">Tampilkan pertimbangan media</button>
+ <div id="mediaResult" class="result" aria-live="polite"></div>
+</section>
+<section class="section" id="rangkuman">
+ <h2>6. Rangkuman</h2>
+ <ol>
+  <li>Analisis awal menjadi fondasi pengembangan media agar relevan, efisien, inklusif, dan mendukung hasil belajar.</li>
+  <li>Profil peserta didik meliputi karakteristik umum, pengetahuan awal, preferensi belajar, kebutuhan aksesibilitas, serta kondisi sosial dan lingkungan.</li>
+  <li>Data profil dapat dikumpulkan melalui tes diagnostik, angket, observasi, dan wawancara.</li>
+  <li>Tujuan pembelajaran yang baik menyatakan Audience, Behavior, Condition, dan Degree serta menggunakan perilaku terukur yang selaras dengan asesmen.</li>
+  <li>Kebutuhan media ditetapkan dengan menganalisis kesenjangan belajar, karakteristik materi, tujuan, karakteristik peserta didik, dan kendala nyata.</li>
+  <li>Media bukan solusi otomatis untuk semua masalah; keputusan harus didukung data dan alasan instruksional.</li>
+ </ol>
+</section>
+<section class="section" id="lkm">
+ <span class="tag">Praktik Kelompok</span><h2>7. Lembar Kerja Mahasiswa (LKM 01)</h2>
+ <p class="lead">Instruksi: kerjakan dalam kelompok beranggotakan 3–4 mahasiswa. Pilih satu topik mata pelajaran pada jenjang SD, SMP, atau SMA. Lengkapi analisis berikut.</p>
+ <div class="worksheet">
+  <h3>Bagian 1 — Identitas perancangan</h3>
+  <div class="field"><label for="subject">Mata pelajaran / topik</label><input id="subject" placeholder="Contoh: IPA — sistem peredaran darah"></div>
+  <div class="field"><label for="grade">Sasaran kelas / jenjang</label><input id="grade" placeholder="Contoh: kelas VIII SMP"></div>
+  <div class="field"><label for="school">Sekolah / target audiens</label><input id="school" placeholder="Deskripsikan sasaran peserta didik"></div>
+  <h3>Bagian 2 — Matriks profil peserta didik</h3>
+  <div class="field"><label for="age">Usia & perkembangan kognitif</label><textarea id="age" placeholder="Rentang usia, ciri perkembangan, dan implikasinya..."></textarea></div>
+  <div class="field"><label for="prior">Pengetahuan awal (entry behavior)</label><textarea id="prior" placeholder="Apa yang telah dikuasai? Miskonsepsi apa yang mungkin muncul?"></textarea></div>
+  <div class="field"><label for="modality">Preferensi penyajian dan aktivitas</label><textarea id="modality" placeholder="Visual, audio, teks, praktik, diskusi, interaksi—berdasarkan data yang tersedia..."></textarea></div>
+  <div class="field"><label for="access">Aksesibilitas perangkat / teknologi</label><textarea id="access" placeholder="Gawai, internet, listrik, kebutuhan aksesibilitas, dan dukungan sekolah..."></textarea></div>
+  <h3>Bagian 3 — Tujuan pembelajaran (ABCD)</h3>
+  <div class="field"><label for="lkmA">Audience (A)</label><input id="lkmA"></div><div class="field"><label for="lkmB">Behavior (B)</label><input id="lkmB"></div><div class="field"><label for="lkmC">Condition (C)</label><input id="lkmC"></div><div class="field"><label for="lkmD">Degree (D)</label><input id="lkmD"></div>
+  <div class="field"><label for="lkmGoal">Rumusan tujuan lengkap</label><textarea id="lkmGoal" placeholder="Gabungkan unsur A, B, C, dan D menjadi satu tujuan terukur."></textarea></div>
+  <h3>Bagian 4 — Justifikasi kebutuhan media</h3>
+  <div class="field"><label for="gap">1. Mengapa materi membutuhkan media? Jelaskan kesenjangan belajar tanpa media.</label><textarea id="gap"></textarea></div>
+  <div class="field"><label for="choice">2. Media apa yang direkomendasikan? Jelaskan kesesuaiannya dengan profil, tujuan, materi, dan kendala.</label><textarea id="choice"></textarea></div>
+  <div class="btn-row"><button class="btn teal" onclick="exportLKM()">Susun hasil LKM</button><button class="btn secondary" onclick="window.print()">Cetak LKM</button><button class="btn secondary" onclick="clearLKM()">Kosongkan LKM</button></div>
+  <div id="lkmResult" class="result"></div>
+  <p class="small">Hasil dapat disalin dari kotak hasil. Simpan salinan sebelum menutup atau memuat ulang halaman.</p>
+ </div>
+</section>
+<section class="section" id="tes">
+ <span class="tag">Evaluasi Mandiri</span><h2>8. Tes Formatif</h2>
+ <p>Pilih satu jawaban paling tepat untuk setiap soal. Skor ditampilkan setelah tombol “Periksa nilai” ditekan.</p>
+ <form id="quizForm">
+  <div class="quiz-q"><p>1. Materi sistem peredaran darah bersifat abstrak dan dinamis. Media yang paling sesuai untuk menjelaskan aliran darah adalah...</p>
+   <label class="option"><input type="radio" name="q1" value="a"> A. Modul cetak dengan gambar diam saja</label><label class="option"><input type="radio" name="q1" value="b"> B. Animasi video 2D/3D dengan pertanyaan interaktif</label><label class="option"><input type="radio" name="q1" value="c"> C. Rekaman audio penjelasan guru saja</label><label class="option"><input type="radio" name="q1" value="d"> D. Poster dinding tanpa penjelasan tambahan</label>
+  </div>
+  <div class="quiz-q"><p>2. Tujuan “Siswa dapat menyebutkan organ-organ pencernaan manusia dengan tepat” belum menyatakan secara eksplisit unsur...</p>
+   <label class="option"><input type="radio" name="q2" value="a"> A. Audience dan Behavior</label><label class="option"><input type="radio" name="q2" value="b"> B. Behavior dan Condition</label><label class="option"><input type="radio" name="q2" value="c"> C. Condition dan Degree</label><label class="option"><input type="radio" name="q2" value="d"> D. Audience dan Condition</label>
+  </div>
+  <div class="quiz-q"><p>3. Pengumpulan data untuk mengetahui apakah peserta didik telah memiliki pengetahuan prasyarat disebut...</p>
+   <label class="option"><input type="radio" name="q3" value="a"> A. Analisis biaya</label><label class="option"><input type="radio" name="q3" value="b"> B. Analisis kemampuan awal (entry behavior analysis)</label><label class="option"><input type="radio" name="q3" value="c"> C. Uji kegunaan media</label><label class="option"><input type="radio" name="q3" value="d"> D. Evaluasi sumatif</label>
+  </div>
+  <div class="quiz-q"><p>4. Sekolah memiliki internet yang tidak stabil. Pertimbangan desain yang paling tepat adalah...</p>
+   <label class="option"><input type="radio" name="q4" value="a"> A. Semua aktivitas wajib streaming video resolusi tinggi</label><label class="option"><input type="radio" name="q4" value="b"> B. Mengabaikan kendala karena siswa punya ponsel</label><label class="option"><input type="radio" name="q4" value="c"> C. Menyediakan media offline atau konten yang dapat diunduh beserta alternatif cetak</label><label class="option"><input type="radio" name="q4" value="d"> D. Menghapus tujuan pembelajaran</label>
+  </div>
+  <div class="quiz-q"><p>5. Manakah kata kerja yang paling jelas mengarah pada kemampuan C4 (menganalisis)?</p>
+   <label class="option"><input type="radio" name="q5" value="a"> A. Menyebutkan</label><label class="option"><input type="radio" name="q5" value="b"> B. Mengenali</label><label class="option"><input type="radio" name="q5" value="c"> C. Membandingkan dan menguraikan hubungan</label><label class="option"><input type="radio" name="q5" value="d"> D. Menghafal</label>
+  </div>
+  <div class="btn-row"><button class="btn" type="button" onclick="gradeQuiz()">Periksa nilai</button><button class="btn secondary" type="reset" onclick="document.getElementById('quizResult').classList.remove('show')">Ulangi tes</button></div>
+ </form>
+ <div id="quizResult" class="result" aria-live="polite"></div>
+ <details style="margin-top:18px"><summary style="cursor:pointer;font-weight:750;color:var(--blue)">Kunci jawaban untuk dosen</summary><p>1. B · 2. C · 3. B · 4. C · 5. C</p><p class="small">Pada soal nomor 2, unsur Audience tidak eksplisit karena “siswa” belum menyebut kelompok sasaran yang spesifik; Condition dan Degree juga tidak dicantumkan. Dalam opsi yang tersedia, C merupakan jawaban yang paling sesuai dengan kunci modul karena kondisi dan kriteria keberhasilan tidak dituliskan. Untuk penilaian yang ketat, revisi soal agar hanya ada satu jawaban tak terbantahkan, misalnya: “Unsur yang belum dicantumkan selain Audience dan Behavior adalah...”</p></details>
+</section>
+<section class="section" id="pustaka">
+ <h2>9. Daftar Pustaka</h2>
+ <ul>
+  <li>Clark, R. C., &amp; Mayer, R. E. (2016). <em>e-Learning and the Science of Instruction: Proven Guidelines for Consumers and Designers of Multimedia Learning.</em> John Wiley &amp; Sons.</li>
+  <li>Dick, W., Carey, L., &amp; Carey, J. O. (2015). <em>The Systematic Design of Instruction</em> (8th ed.). Pearson.</li>
+  <li>Smaldino, S. E., Lowther, D. L., &amp; Russell, J. D. (2019). <em>Instructional Technology and Media for Learning</em> (12th ed.). Pearson.</li>
+  <li>Krathwohl, D. R. (2002). A revision of Bloom’s taxonomy: An overview. <em>Theory Into Practice, 41</em>(4), 212–218.</li>
+ </ul>
+ <div class="callout"><strong>Refleksi akhir:</strong> sebelum memilih media, tanyakan: siapa peserta didiknya, kemampuan apa yang dituju, kesenjangan apa yang perlu diatasi, dan apakah media yang dipilih layak diakses serta digunakan dalam kondisi nyata?</div>
+</section>
+</main>
+</div>
+<footer class="footer"><strong>MEDIA LAB · Modul 1</strong><br>Media Pembelajaran | Tim Dosen Teknologi Pendidikan<br><span class="small" style="color:#b9c8dc">Materi pembelajaran mandiri • Gunakan analisis berbasis data untuk mengambil keputusan desain.</span></footer>
+<button class="backtop" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+const progress=document.getElementById('progress');
+function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?(window.scrollY/max)*100:0)+'%'}
+window.addEventListener('scroll',updateProgress);updateProgress();
+function checkQuick(){const v=document.querySelector('input[name="quick"]:checked');const f=document.getElementById('quickFeedback');f.className='feedback show '+(v&&v.value==='b'?'correct':'incorrect');f.textContent=v&&v.value==='b'?'Benar. Tes diagnostik membantu mengukur pengetahuan prasyarat.':'Belum tepat. Pilih hasil tes diagnostik materi prasyarat.'}
+function generateObjective(){const a=document.getElementById('audience').value.trim(),b=document.getElementById('behavior').value.trim(),c=document.getElementById('condition').value.trim(),d=document.getElementById('degree').value.trim();const r=document.getElementById('objectiveResult');if(!a||!b||!c||!d){r.textContent='Lengkapi semua unsur A, B, C, dan D agar tujuan terukur.';r.classList.add('show');return}r.textContent=`Draf tujuan pembelajaran:\\n${c.charAt(0).toUpperCase()+c.slice(1)}, ${a} dapat ${b} ${d}.\\n\\nPemeriksaan: A=${a}; B=${b}; C=${c}; D=${d}. Tinjau kembali tata bahasa dan pastikan behavior dapat diamati serta degree dapat dinilai.`;r.classList.add('show')}
+function clearObjective(){['audience','behavior','condition','degree'].forEach(id=>document.getElementById(id).value='');document.getElementById('objectiveResult').classList.remove('show')}
+function recommendMedia(){const m=document.getElementById('material').value,i=document.getElementById('internet').value,r=document.getElementById('mediaResult');if(!m||!i){r.textContent='Pilih sifat materi dan kondisi akses terlebih dahulu.';r.classList.add('show');return}let s='Pertimbangan awal: ';if(m==='Abstrak dan dinamis')s+='gunakan animasi atau simulasi untuk memperlihatkan perubahan/proses dari waktu ke waktu. ';else if(m==='Konkret dan prosedural')s+='video demonstrasi bertahap, panduan visual, dan kesempatan praktik dapat membantu. ';else if(m==='Faktual dan perlu diingat')s+='infografis ringkas, kartu belajar, latihan pengambilan kembali, atau kuis dapat dipertimbangkan. ';else s+='gunakan studi kasus, visualisasi data, simulasi, atau matriks yang meminta siswa membandingkan dan memberi alasan. ';if(i==='Internet terbatas atau tidak stabil')s+='Karena internet terbatas, sediakan konten offline/unduhan, media cetak pendamping, dan asesmen yang dapat dikerjakan tanpa koneksi.';else if(i==='Perangkat digital terbatas')s+='Utamakan media bersama yang ditampilkan lewat proyektor jika tersedia, rotasi kelompok, atau bahan cetak yang dirancang aktif.';else s+='Akses digital mendukung penggunaan media interaktif, tetapi tetap siapkan alternatif aksesibel dan uji pada perangkat siswa.';s+=' Validasi rekomendasi dengan tujuan pembelajaran, data kebutuhan siswa, waktu, biaya, dan uji coba.';r.textContent=s;r.classList.add('show')}
+function val(id){return document.getElementById(id).value.trim()||'(Belum diisi)'}
+function exportLKM(){const s=`LEMBAR KERJA MAHASISWA — LKM 01\\n\\nBAGIAN 1. IDENTITAS\\nMata pelajaran/topik: ${val('subject')}\\nKelas/jenjang: ${val('grade')}\\nSekolah/target audiens: ${val('school')}\\n\\nBAGIAN 2. PROFIL PESERTA DIDIK\\nUsia & perkembangan: ${val('age')}\\nPengetahuan awal: ${val('prior')}\\nPreferensi belajar: ${val('modality')}\\nAksesibilitas: ${val('access')}\\n\\nBAGIAN 3. TUJUAN ABCD\\nAudience: ${val('lkmA')}\\nBehavior: ${val('lkmB')}\\nCondition: ${val('lkmC')}\\nDegree: ${val('lkmD')}\\nRumusan tujuan: ${val('lkmGoal')}\\n\\nBAGIAN 4. JUSTIFIKASI MEDIA\\nKesenjangan belajar: ${val('gap')}\\nRekomendasi dan alasan: ${val('choice')}`;const r=document.getElementById('lkmResult');r.textContent=s;r.classList.add('show');const b=document.createElement('button');b.className='btn secondary';b.textContent='Salin hasil LKM';b.onclick=()=>navigator.clipboard&&navigator.clipboard.writeText(s).then(()=>{b.textContent='Tersalin'}).catch(()=>alert('Pilih dan salin teks hasil LKM secara manual.'));r.appendChild(document.createElement('br'));r.appendChild(b)}
+function clearLKM(){['subject','grade','school','age','prior','modality','access','lkmA','lkmB','lkmC','lkmD','lkmGoal','gap','choice'].forEach(id=>document.getElementById(id).value='');document.getElementById('lkmResult').classList.remove('show')}
+function gradeQuiz(){const key={q1:'b',q2:'c',q3:'b',q4:'c',q5:'c'};let score=0,answered=0,detail=[];Object.entries(key).forEach(([q,a],i)=>{const chosen=document.querySelector(`input[name="${q}"]:checked`);if(chosen){answered++;if(chosen.value===a)score++;detail.push(`${i+1}. ${chosen.value===a?'Benar':'Belum tepat'}`)}else detail.push(`${i+1}. Belum dijawab`)});const r=document.getElementById('quizResult');r.textContent=`Nilai: ${score}/5 (${Math.round(score/5*100)}%)\\nTerjawab: ${answered}/5\\n${detail.join('\\n')}\\n\\n${score===5?'Sangat baik! Anda telah memahami konsep inti modul.':score>=3?'Cukup baik. Tinjau kembali bagian yang belum dikuasai.':'Pelajari kembali modul, terutama ABCD dan justifikasi media, lalu ulangi tes.'}`;r.classList.add('show')}
+</script>
+</body>
+</html>
