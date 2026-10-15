@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 7: Analisis Kebutuhan & Karakteristik Peserta Didik - Media Pembelajaran</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        },
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- KaTeX for Math Equations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass-effect {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Reading Progress Bar -->
+    <div id="progress-container" class="fixed top-0 left-0 w-full h-1.5 bg-slate-200 dark:bg-slate-800 z-50">
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-blue-600 to-indigo-600 w-0 transition-all duration-150"></div>
+    </div>
+
+    <!-- Header Navbar -->
+    <header class="sticky top-0 z-40 w-full glass-effect border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <button id="sidebar-toggle" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+                <div class="flex items-center gap-2">
+                    <span class="p-2 bg-blue-600 text-white rounded-xl shadow-md">
+                        <i class="fa-solid fa-book-open text-lg"></i>
+                    </span>
+                    <div>
+                        <h1 class="font-bold text-base sm:text-lg text-slate-900 dark:text-white leading-tight">Media Pembelajaran</h1>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Modul 7 • Teknologi Pendidikan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Controls -->
+            <div class="flex items-center gap-3">
+                <span class="hidden md:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                    <i class="fa-solid fa-award mr-1.5"></i> 4 SKS
+                </span>
+                <button id="theme-toggle" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" title="Ubah Tema">
+                    <i class="fa-solid fa-moon text-lg dark:hidden"></i>
+                    <i class="fa-solid fa-sun text-lg hidden dark:block text-amber-400"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-8">
+
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="fixed lg:sticky top-20 inset-x-0 bottom-0 lg:bottom-auto z-30 w-72 h-[calc(100vh-5rem)] bg-white dark:bg-slate-800 lg:bg-transparent lg:dark:bg-transparent border-r lg:border-r-0 border-slate-200 dark:border-slate-800 p-4 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 rounded-r-2xl lg:rounded-none shadow-xl lg:shadow-none">
+            <nav class="space-y-1">
+                <p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Daftar Isi Modul</p>
+
+                <a href="#pendahuluan" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-circle-info text-slate-400 w-5"></i> 1. Pendahuluan
+                </a>
+                <a href="#sub-cpmk" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-bullseye text-slate-400 w-5"></i> 2. Sub-CPMK
+                </a>
+                <a href="#kb1" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-users text-slate-400 w-5"></i> 3. KB 1: Profil Peserta Didik
+                </a>
+                <a href="#kb2" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-crosshairs text-slate-400 w-5"></i> 4. KB 2: Tujuan Pembelajaran
+                </a>
+                <a href="#kb3" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-magnifying-glass-chart text-slate-400 w-5"></i> 5. KB 3: Analisis Kebutuhan
+                </a>
+                <a href="#rangkuman" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-list-check text-slate-400 w-5"></i> 6. Rangkuman
+                </a>
+                <a href="#lkm" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-pen-to-square text-slate-400 w-5"></i> 7. Lembar Kerja (LKM)
+                </a>
+                <a href="#tes-formatif" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-graduation-cap text-slate-400 w-5"></i> 8. Tes Formatif Interaktif
+                </a>
+                <a href="#daftar-pustaka" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700/50 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+                    <i class="fa-solid fa-book text-slate-400 w-5"></i> 9. Daftar Pustaka
+                </a>
+            </nav>
+
+            <div class="mt-8 p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg">
+                <div class="flex items-center gap-2 mb-2">
+                    <i class="fa-solid fa-chalkboard-user text-lg"></i>
+                    <span class="font-bold text-sm">Tim Penyusun</span>
+                </div>
+                <p class="text-xs text-blue-100">Tim Dosen Teknologi Pendidikan</p>
+                <p class="text-xs text-blue-200 mt-2 font-medium">Program Studi Teknologi Pendidikan</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 min-w-0 space-y-12">
+
+            <!-- Hero Banner & Pendahuluan -->
+            <section id="pendahuluan" class="scroll-mt-24">
+                <div class="p-8 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white/20 backdrop-blur-md mb-4 uppercase tracking-wider">Modul Perkuliahan 7</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+                            Analisis Kebutuhan, Karakteristik Peserta Didik, dan Perumusan Tujuan Pembelajaran
+                        </h2>
+                        <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-blue-100 mb-6">
+                            <span><i class="fa-solid fa-book-bookmark mr-1"></i> Mata Kuliah: Media Pembelajaran</span>
+                            <span><i class="fa-solid fa-layer-group mr-1"></i> Bobot: 4 SKS</span>
+                            <span><i class="fa-solid fa-users-gear mr-1"></i> Penyusun: Tim Dosen TP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Card 1: Pendahuluan -->
+                <div class="mt-6 p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400">
+                        <i class="fa-solid fa-compass text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">1. Pendahuluan</h3>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+                        Dalam ranah <strong>Teknologi Pendidikan (Educational Technology)</strong>, pemilihan atau pengembangan media pembelajaran bukanlah proses acak berbasis preferensi pribadi pengajar. Sebaliknya, media yang efektif lahir dari proses sistematis berlandaskan desain instruksional (<em>instructional design</em>).
+                    </p>
+                    <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-amber-900 dark:text-amber-200 flex gap-3">
+                        <i class="fa-solid fa-triangle-exclamation text-xl text-amber-600 dark:text-amber-400 mt-1"></i>
+                        <div class="text-sm leading-relaxed">
+                            <strong>Penting:</strong> Tahap paling krusial dalam siklus pengembangan media—sebagaimana ditegaskan dalam model <strong>ADDIE (Analysis)</strong> maupun model <strong>ASSURE (Analyze Learners)</strong>—adalah peta analisis awal. Pengajar yang melewatkan tahap ini berisiko menciptakan media yang tidak relevan, terlalu rumit, atau tidak menjawab pemenuhan indikator kompetensi.
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+                        Modul ini dibentuk untuk membekali mahasiswa calon pendidik/teknolog pembelajaran agar mampu melakukan analisis mendalam mengenai kriteria target audiens, merumuskan tujuan instruksional secara presisi, serta memetakan kebutuhan media secara rasional dan terukur.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Capaian Pembelajaran (Sub-CPMK) -->
+            <section id="sub-cpmk" class="scroll-mt-24">
+                <div class="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm">
+                    <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400 mb-6">
+                        <i class="fa-solid fa-bullseye text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">2. Capaian Pembelajaran (Sub-CPMK)</h3>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-300 mb-6">
+                        Setelah mempelajari modul ini dan menyelesaikan tugas-tugas di dalamnya, mahasiswa diharapkan mampu:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-blue-50/60 dark:bg-slate-700/50 border border-blue-100 dark:border-slate-700 flex gap-4 items-start">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm">1</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Sub-CPMK 1</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Menganalisis kebutuhan dan karakteristik peserta didik serta tujuan pembelajaran secara holistik.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-indigo-50/60 dark:bg-slate-700/50 border border-indigo-100 dark:border-slate-700 flex gap-4 items-start">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">2</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Sub-CPMK 2</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Mengidentifikasi profil peserta didik secara tepat menggunakan pendekatan metodologis.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-purple-50/60 dark:bg-slate-700/50 border border-purple-100 dark:border-slate-700 flex gap-4 items-start">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm">3</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Sub-CPMK 3</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Mendeskripsikan tujuan pembelajaran yang terukur berbasis kriteria standar (ABCD Model / Revised Bloom's Taxonomy).</p>
+                            </div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-emerald-50/60 dark:bg-slate-700/50 border border-emerald-100 dark:border-slate-700 flex gap-4 items-start">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">4</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Sub-CPMK 4</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Menjelaskan dan menjustifikasi kebutuhan media pembelajaran berbasis hasil pemetaan analisis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kegiatan Belajar 1: Profil Peserta Didik -->
+            <section id="kb1" class="scroll-mt-24 space-y-6">
+                <div class="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400">
+                        <i class="fa-solid fa-users text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">3. Kegiatan Belajar 1: Identifikasi & Analisis Profil Peserta Didik</h3>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> A. Dimensi Karakteristik Peserta Didik
+                    </h4>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+                        Untuk menentukan media yang tepat, seorang perancang media (<em>instructional designer</em>) harus mengkaji peserta didik dari 4 (empat) dimensi utama:
+                    </p>
+
+                    <!-- Interactive 4 Dimensions Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-blue-500 transition-all group">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+                            <h5 class="font-bold text-slate-900 dark:text-white mb-2 text-sm">1. Karakteristik Umum</h5>
+                            <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                                <li>Usia & Tahap Perkembangan Kognitif (Piaget)</li>
+                                <li>Jenis Kelamin</li>
+                                <li>Tingkat Pendidikan / Kelas</li>
+                                <li>Latar Belakang Sosial Ekonomi</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-indigo-500 transition-all group">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <h5 class="font-bold text-slate-900 dark:text-white mb-2 text-sm">2. Karakteristik Spesifik / Awal</h5>
+                            <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                                <li>Pengetahuan awal (<em>prerequisite knowledge</em>)</li>
+                                <li>Keterampilan teknis (literasi digital dasar)</li>
+                                <li>Mitos / Miskonsepsi materi yang dipegang</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-purple-500 transition-all group">
+                            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h5 class="font-bold text-slate-900 dark:text-white mb-2 text-sm">3. Gaya Belajar & Preferensi</h5>
+                            <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                                <li><strong>VARK Model:</strong> Visual, Aural, Read/Write, Kinesthetic</li>
+                                <li><em>Perceptual preferences:</em> Preferensi audio, grafis, atau interaktif</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-emerald-500 transition-all group">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-wifi"></i>
+                            </div>
+                            <h5 class="font-bold text-slate-900 dark:text-white mb-2 text-sm">4. Kondisi & Lingkungan</h5>
+                            <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                                <li>Kebutuhan Khusus (Inklusi / <em>Special Needs</em>)</li>
+                                <li>Aksesibilitas gawai, internet, dan fasilitas sekolah</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- B. Metode Pengumpulan Data -->
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pt-4">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> B. Metode Pengumpulan Data Profil Peserta Didik
+                    </h4>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                            <thead>
+                                <tr class="bg-slate-100 dark:bg-slate-700/60 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700">
+                                    <th class="p-3 font-semibold rounded-tl-xl">Metode</th>
+                                    <th class="p-3 font-semibold">Teknik Pelaksanaan</th>
+                                    <th class="p-3 font-semibold rounded-tr-xl">Data yang Dihasilkan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-medium text-slate-900 dark:text-white">Tes Diagnostik (Diagnostic Test)</td>
+                                    <td class="p-3">Pre-test ringkas sebelum materi dimulai</td>
+                                    <td class="p-3"><span class="px-2 py-1 rounded bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs">Tingkat penguasaan prior knowledge</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-medium text-slate-900 dark:text-white">Angket / Kuesioner (Survey)</td>
+                                    <td class="p-3">Google Form / Lembar Cetak (Pilihan Ganda & Skala Likert)</td>
+                                    <td class="p-3"><span class="px-2 py-1 rounded bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300 text-xs">Modalitas belajar, aksesibilitas, minat</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-medium text-slate-900 dark:text-white">Observasi Unobtrusive</td>
+                                    <td class="p-3">Mengamati interaksi kelas pada sesi sebelumnya</td>
+                                    <td class="p-3"><span class="px-2 py-1 rounded bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300 text-xs">Attention span & keterlibatan</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-medium text-slate-900 dark:text-white">Wawancara Terstruktur</td>
+                                    <td class="p-3">Wawancara sampel peserta didik / guru pamong</td>
+                                    <td class="p-3"><span class="px-2 py-1 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 text-xs">Masalah spesifik & kendala motivasi</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kegiatan Belajar 2: Perumusan Tujuan Pembelajaran -->
+            <section id="kb2" class="scroll-mt-24 space-y-6">
+                <div class="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400">
+                        <i class="fa-solid fa-crosshairs text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">4. Kegiatan Belajar 2: Perumusan Tujuan Pembelajaran</h3>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> A. Pentingnya Tujuan Pembelajaran dalam Desain Media
+                    </h4>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Tujuan pembelajaran berfungsi sebagai <strong>kompas</strong> dalam pemilihan media. Media tidak dibuat untuk memenuhi tren teknologi, melainkan untuk membantu peserta didik mencapai indikator performa tertentu.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-blue-50/50 dark:bg-slate-700/40 border border-blue-200 dark:border-slate-600">
+                            <h5 class="font-bold text-blue-800 dark:text-blue-300 text-sm mb-1"><i class="fa-solid fa-brain mr-2"></i> Kognitif Tingkat Tinggi (Analisis / Evaluasi)</h5>
+                            <p class="text-xs text-slate-600 dark:text-slate-300">Media interaktif atau simulasi berbasis masalah lebih sesuai dibanding video presentasi pasif.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-emerald-50/50 dark:bg-slate-700/40 border border-emerald-200 dark:border-slate-600">
+                            <h5 class="font-bold text-emerald-800 dark:text-emerald-300 text-sm mb-1"><i class="fa-solid fa-person-running mr-2"></i> Psikomotorik (Keterampilan Fisik)</h5>
+                            <p class="text-xs text-slate-600 dark:text-slate-300">Media berupa video demonstrasi atau AR (Augmented Reality) gerakan tubuh lebih tepat.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pt-4">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> B. Model Perumusan Tujuan ABCD
+                    </h4>
+                    
+                    <!-- Formula Box -->
+                    <div class="p-4 rounded-2xl bg-slate-900 text-white font-mono text-center overflow-x-auto text-sm sm:text-base shadow-inner">
+                        $$\text{Tujuan Pembelajaran} = \text{Audience (A)} + \text{Behavior (B)} + \text{Condition (C)} + \text{Degree (D)}$$
+                    </div>
+
+                    <!-- ABCD Explanation Interactive Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="p-4 rounded-2xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
+                            <span class="px-2 py-0.5 rounded font-bold text-xs bg-blue-600 text-white">A</span>
+                            <h5 class="font-bold text-slate-900 dark:text-white mt-2 text-sm">Audience (Siapa?)</h5>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Target pembelajar.<br><em>Contoh: Siswa Kelas V SD</em></p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800">
+                            <span class="px-2 py-0.5 rounded font-bold text-xs bg-emerald-600 text-white">B</span>
+                            <h5 class="font-bold text-slate-900 dark:text-white mt-2 text-sm">Behavior (Perilaku)</h5>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Kata Kerja Operasional (KKO) yang terukur.<br><em>Contoh: Menganalisis 4 tahapan siklus air</em></p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
+                            <span class="px-2 py-0.5 rounded font-bold text-xs bg-amber-600 text-white">C</span>
+                            <h5 class="font-bold text-slate-900 dark:text-white mt-2 text-sm">Condition (Kondisi)</h5>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Bantuan/media saat diuji.<br><em>Contoh: Setelah mengamati infografis interaktif</em></p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800">
+                            <span class="px-2 py-0.5 rounded font-bold text-xs bg-purple-600 text-white">D</span>
+                            <h5 class="font-bold text-slate-900 dark:text-white mt-2 text-sm">Degree (Tingkat)</h5>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Standar keberhasilan.<br><em>Contoh: Dengan runtut dan benar (min 80%)</em></p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive ABCD Goal Simulator -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles text-blue-600 dark:text-blue-400"></i>
+                            <h5 class="font-bold text-slate-900 dark:text-white text-sm">Simulator Interaktif Perumusan ABCD</h5>
+                        </div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Ketik atau ubah komponen di bawah untuk melihat susunan kalimat tujuan pembelajaran secara langsung:</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            <div>
+                                <label class="block font-semibold text-amber-700 dark:text-amber-400 mb-1">Condition (C):</label>
+                                <input id="sim-c" type="text" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none" value="Setelah mengamati infografis interaktif siklus air">
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-blue-700 dark:text-blue-400 mb-1">Audience (A):</label>
+                                <input id="sim-a" type="text" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none" value="siswa kelas V SD">
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-emerald-700 dark:text-emerald-400 mb-1">Behavior (B):</label>
+                                <input id="sim-b" type="text" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none" value="dapat menganalisis 4 tahapan utama evaporasi, kondensasi, presipitasi, dan infiltrasi">
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-purple-700 dark:text-purple-400 mb-1">Degree (D):</label>
+                                <input id="sim-d" type="text" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none" value="dengan runtut dan benar">
+                            </div>
+                        </div>
+
+                        <!-- Live Compiled Sentence -->
+                        <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600">
+                            <span class="text-xs font-semibold text-slate-400 block mb-2">Hasil Formulasi Kalimat:</span>
+                            <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-100 font-medium">
+                                "<span id="out-c" class="bg-amber-100 text-amber-900 dark:bg-amber-900/50 dark:text-amber-200 px-1 py-0.5 rounded font-semibold"></span>, 
+                                <span id="out-a" class="bg-blue-100 text-blue-900 dark:bg-blue-900/50 dark:text-blue-200 px-1 py-0.5 rounded font-semibold"></span> 
+                                <span id="out-b" class="bg-emerald-100 text-emerald-900 dark:bg-emerald-900/50 dark:text-emerald-200 px-1 py-0.5 rounded font-semibold"></span> 
+                                <span id="out-d" class="bg-purple-100 text-purple-900 dark:bg-purple-900/50 dark:text-purple-200 px-1 py-0.5 rounded font-semibold"></span>."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- C. Taksonomi Bloom Terrevisi -->
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pt-4">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> C. Taksonomi Bloom Terrevisi & Implikasi Media
+                    </h4>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                            <thead>
+                                <tr class="bg-slate-100 dark:bg-slate-700/60 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700">
+                                    <th class="p-3 font-semibold rounded-tl-xl">Tingkat Kognitif</th>
+                                    <th class="p-3 font-semibold">Kata Kerja Operasional (KKO)</th>
+                                    <th class="p-3 font-semibold rounded-tr-xl">Jenis Media yang Relevan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-bold text-blue-600 dark:text-blue-400">C1: Mengingat</td>
+                                    <td class="p-3">Menyebutkan, mendefinisikan, mengenali</td>
+                                    <td class="p-3">Flashcard, Audio Podcasting, Infografis Statis</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-bold text-indigo-600 dark:text-indigo-400">C2: Memahami</td>
+                                    <td class="p-3">Menjelaskan, merangkum, mengelompokkan</td>
+                                    <td class="p-3">Video Pembelajaran Eksplanatif, Diagram, Slide Visual</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-bold text-teal-600 dark:text-teal-400">C3: Menerapkan</td>
+                                    <td class="p-3">Menunjukkan, mengoperasikan, menyimulasikan</td>
+                                    <td class="p-3">Modul Interaktif, Video Demonstrasi/Tutorial</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-bold text-amber-600 dark:text-amber-400">C4: Menganalisis</td>
+                                    <td class="p-3">Membandingkan, membedakan, mendiagnosis</td>
+                                    <td class="p-3">Matriks Perbandingan, Software Simulasi, E-Book Interaktif</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-bold text-purple-600 dark:text-purple-400">C5: Mengevaluasi</td>
+                                    <td class="p-3">Menilai, mengkritik, membuktikan</td>
+                                    <td class="p-3">Forum Diskusi Digital, Interactive Case Study</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-bold text-rose-600 dark:text-rose-400">C6: Menciptakan</td>
+                                    <td class="p-3">Merancang, mengonstruksi, menyusun</td>
+                                    <td class="p-3">Software Multimedia Creator, Canvas Kolaboratif Digital</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kegiatan Belajar 3: Analisis Kebutuhan Media -->
+            <section id="kb3" class="scroll-mt-24 space-y-6">
+                <div class="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400">
+                        <i class="fa-solid fa-magnifying-glass-chart text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">5. Kegiatan Belajar 3: Analisis Kebutuhan Media Pembelajaran (Need Analysis)</h3>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> A. Konsep Analisis Kebutuhan Media
+                    </h4>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Analisis kebutuhan media adalah proses mengidentifikasi kesenjangan (<em>gap</em>) antara <strong>kondisi pembelajaran saat ini (actual condition)</strong> dan <strong>kondisi ideal yang diharapkan (desired condition)</strong>, serta menentukan apakah media dapat menyelesaikan masalah kesenjangan tersebut.
+                    </p>
+
+                    <!-- Animated / Interactive Gap Diagram -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 max-w-xl mx-auto space-y-4 text-center">
+                        <div class="p-4 rounded-xl bg-rose-100 dark:bg-rose-950/50 border border-rose-200 dark:border-rose-800 text-rose-900 dark:text-rose-200">
+                            <span class="text-xs font-bold uppercase tracking-wider block">Kondisi Saat Ini (Actual Condition)</span>
+                            <p class="text-sm font-semibold mt-1">Abstrak, Siklus Terlalu Lambat, Rendahnya Motivasi Siswa</p>
+                        </div>
+                        
+                        <div class="flex items-center justify-center gap-2 text-slate-400 font-bold text-sm">
+                            <i class="fa-solid fa-arrow-down text-lg animate-bounce"></i> GAP (Kesenjangan Pembelajaran)
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-emerald-100 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200">
+                            <span class="text-xs font-bold uppercase tracking-wider block">Kondisi Ideal (Desired Condition)</span>
+                            <p class="text-sm font-semibold mt-1">Siswa Paham Proses, Visualisasi Konkret, Pembelajaran Aktif</p>
+                        </div>
+
+                        <div class="flex items-center justify-center gap-2 text-slate-400 font-bold text-sm">
+                            <i class="fa-solid fa-arrow-down text-lg animate-bounce"></i> SOLUSI MEDIA
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-blue-600 text-white shadow-md">
+                            <span class="text-xs font-bold uppercase tracking-wider block text-blue-200">Intervensi Media Pembelajaran</span>
+                            <p class="text-base font-bold mt-1">Simulasi Komputer / Animasi 3D</p>
+                        </div>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pt-4">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> B. Langkah-Langkah Menentukan Kebutuhan Media
+                    </h4>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h5 class="font-bold text-slate-900 dark:text-white text-sm mb-2">1. Analisis Kendala & Realitas (Constraint Analysis)</h5>
+                            <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
+                                <li>Berapa durasi waktu yang tersedia?</li>
+                                <li>Berapa anggaran yang dimiliki?</li>
+                                <li>Fasilitas teknologi apa yang tersedia di ruang kelas (Proyektor, Wi-Fi, Lab)?</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h5 class="font-bold text-slate-900 dark:text-white text-sm mb-2">2. Analisis Karakteristik Materi (Content Analysis)</h5>
+                            <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
+                                <li>Apakah materi bersifat konkret atau abstrak?</li>
+                                <li>Apakah materi memerlukan visualisasi gerak (misal: mekanisme mesin) atau cukup gambar diam (misal: struktur sel)?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5 class="font-bold text-slate-800 dark:text-slate-100 text-sm">3. Matriks Justifikasi Pemilihan Media</h5>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                            <thead>
+                                <tr class="bg-slate-100 dark:bg-slate-700/60 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700">
+                                    <th class="p-3 font-semibold rounded-tl-xl">Indikator Analisis</th>
+                                    <th class="p-3 font-semibold">Temuan / Kondisi Lapangan</th>
+                                    <th class="p-3 font-semibold rounded-tr-xl">Implikasi Kebutuhan Media</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-medium text-slate-900 dark:text-white">Profil Siswa</td>
+                                    <td class="p-3">Generasi Z, Visual Learners, Akrab dengan Smartphone</td>
+                                    <td class="p-3 text-blue-600 dark:text-blue-400 font-medium">Media berbasis Mobile/Digital (Mobile Learning)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-medium text-slate-900 dark:text-white">Tujuan (C4)</td>
+                                    <td class="p-3">Menganalisis perubahan cuaca</td>
+                                    <td class="p-3 text-blue-600 dark:text-blue-400 font-medium">Media dinamis berunsur data real-time / visual animasi</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                                    <td class="p-3 font-medium text-slate-900 dark:text-white">Keterbatasan</td>
+                                    <td class="p-3">Tidak ada akses internet stabil di sekolah</td>
+                                    <td class="p-3 text-blue-600 dark:text-blue-400 font-medium">Media berbasis Offline (Aplikasi standalone / Cetak Interaktif)</td>
+                                </tr>
+                                <tr class="bg-blue-50 dark:bg-blue-950/40 font-bold text-blue-900 dark:text-blue-200">
+                                    <td class="p-3" colspan="2">Rekomendasi Media Akhir</td>
+                                    <td class="p-3 text-blue-700 dark:text-blue-300">Aplikasi Mobile Learning Offline dengan Animasi 2D Interaktif</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rangkuman -->
+            <section id="rangkuman" class="scroll-mt-24">
+                <div class="p-6 sm:p-8 bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl shadow-xl space-y-4">
+                    <div class="flex items-center gap-3 text-blue-400">
+                        <i class="fa-solid fa-list-check text-2xl"></i>
+                        <h3 class="text-xl font-bold">6. Rangkuman Modul</h3>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex gap-3">
+                            <i class="fa-solid fa-check-circle text-emerald-400 text-lg mt-0.5"></i>
+                            <p class="text-xs sm:text-sm text-slate-200">Analisis awal merupakan pondasi utama dalam pengembangan media pembelajaran untuk menjamin efektivitas, efisiensi, dan daya tarik instruksional.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex gap-3">
+                            <i class="fa-solid fa-check-circle text-emerald-400 text-lg mt-0.5"></i>
+                            <p class="text-xs sm:text-sm text-slate-200">Profil peserta didik diidentifikasi melalui karakteristik umum, pengalaman/pengetahuan awal, gaya belajar, serta aspek sosio-kultural dan aksesibilitas.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex gap-3">
+                            <i class="fa-solid fa-check-circle text-emerald-400 text-lg mt-0.5"></i>
+                            <p class="text-xs sm:text-sm text-slate-200">Tujuan pembelajaran dirumuskan secara terukur menggunakan kaidah <strong>ABCD</strong> (Audience, Behavior, Condition, Degree) yang diselaraskan dengan Taksonomi Bloom.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex gap-3">
+                            <i class="fa-solid fa-check-circle text-emerald-400 text-lg mt-0.5"></i>
+                            <p class="text-xs sm:text-sm text-slate-200">Kebutuhan media ditentukan dengan mengintegrasikan hasil analisis profil peserta didik, tuntutan kognitif tujuan, sifat materi, serta kendala fasilitas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lembar Kerja Mahasiswa (LKM) -->
+            <section id="lkm" class="scroll-mt-24">
+                <div class="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between flex-wrap gap-3">
+                        <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400">
+                            <i class="fa-solid fa-pen-to-square text-2xl"></i>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">7. Lembar Kerja Mahasiswa (LKM 01) & Tugas Praktik</h3>
+                        </div>
+                        <button id="btn-copy-lkm" class="px-4 py-2 rounded-xl bg-blue-600 text-white font-medium text-xs sm:text-sm hover:bg-blue-700 transition-all flex items-center gap-2 shadow-md">
+                            <i class="fa-solid fa-copy"></i> Salin Hasil LKM
+                        </button>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-blue-50 dark:bg-slate-700/40 text-xs sm:text-sm text-blue-900 dark:text-blue-200">
+                        <strong>Instruksi:</strong> Kerjakan secara berkelompok (3-4 mahasiswa). Pilih satu topik mata pelajaran di jenjang SD/SMP/SMA, lalu isi formulir interaktif di bawah ini!
+                    </div>
+
+                    <!-- LKM Form -->
+                    <form id="lkm-form" class="space-y-6 text-xs sm:text-sm" onsubmit="event.preventDefault();">
+                        <!-- Bagian 1 -->
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base border-b border-slate-200 dark:border-slate-700 pb-2">BAGIAN 1: IDENTITAS PERANCANGAN</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Mata Pelajaran / Topik:</label>
+                                    <input type="text" id="lkm-mapel" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="misal: Biologi - Sistem Pencernaan">
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Sasaran Kelas / Jenjang:</label>
+                                    <input type="text" id="lkm-kelas" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="misal: Kelas VIII SMP">
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Sekolah / Target Audien:</label>
+                                    <input type="text" id="lkm-sekolah" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="misal: SMP Negeri 1 Subang">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bagian 2 -->
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base border-b border-slate-200 dark:border-slate-700 pb-2">BAGIAN 2: MATRIKS PROFIL PESERTA DIDIK</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Usia & Perkembangan Kognitif:</label>
+                                    <textarea id="lkm-usia" rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="misal: Usia 13-14 tahun, tahap operasional formal awal..."></textarea>
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Pengetahuan Awal (Entry Behavior):</label>
+                                    <textarea id="lkm-entry" rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="misal: Sudah memahami konsep Makanan Sehat di SD..."></textarea>
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Dominasi Modalitas Belajar:</label>
+                                    <div class="flex gap-4 pt-2">
+                                        <label class="flex items-center gap-1.5"><input type="checkbox" id="modal-v" value="Visual" class="rounded text-blue-600"> Visual</label>
+                                        <label class="flex items-center gap-1.5"><input type="checkbox" id="modal-a" value="Audio" class="rounded text-blue-600"> Audio</label>
+                                        <label class="flex items-center gap-1.5"><input type="checkbox" id="modal-k" value="Kinestetik" class="rounded text-blue-600"> Kinestetik</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Aksesibilitas Perangkat / Teknologi:</label>
+                                    <textarea id="lkm-akses" rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="misal: 90% siswa memiliki smartphone pribadi, Wi-Fi sekolah terbatas..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bagian 3 -->
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base border-b border-slate-200 dark:border-slate-700 pb-2">BAGIAN 3: PERUMUSAN TUJUAN PEMBELAJARAN (ABCD)</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="sm:col-span-2">
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Rumusan Tujuan Pembelajaran Lengkap:</label>
+                                    <textarea id="lkm-tujuan" rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="misal: Setelah mengamati simulasi interaktif..."></textarea>
+                                </div>
+                                <div><label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Audience (A):</label><input type="text" id="lkm-a" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white"></div>
+                                <div><label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Behavior (B):</label><input type="text" id="lkm-b" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white"></div>
+                                <div><label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Condition (C):</label><input type="text" id="lkm-c" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white"></div>
+                                <div><label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Degree (D):</label><input type="text" id="lkm-d" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white"></div>
+                            </div>
+                        </div>
+
+                        <!-- Bagian 4 -->
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base border-b border-slate-200 dark:border-slate-700 pb-2">BAGIAN 4: JUSTIFIKASI ANALISIS KEBUTUHAN MEDIA</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">1. Mengapa materi ini membutuhkan media? Kesenjangan apa yang terjadi jika tanpa media?</label>
+                                    <textarea id="lkm-j1" rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="Jelaskan kesenjangan (gap) kondisi saat ini vs kondisi ideal..."></textarea>
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">2. Bentuk media apa yang paling tepat dikembangkan? Berikan alasan berbasis profil audiens & tujuan!</label>
+                                    <textarea id="lkm-j2" rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-900 dark:text-white" placeholder="Sebutkan jenis media dan alasannya..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Tes Formatif Interaktif -->
+            <section id="tes-formatif" class="scroll-mt-24">
+                <div class="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400">
+                            <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">8. Tes Formatif Interaktif</h3>
+                        </div>
+                        <span id="quiz-score-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                            Skor: 0 / 30
+                        </span>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                        Jawablah pertanyaan di bawah ini untuk menguji pemahaman Anda mengenai Modul 7:
+                    </p>
+
+                    <!-- Quiz Form -->
+                    <div id="quiz-container" class="space-y-6">
+                        <!-- Q1 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-3" id="q1-box">
+                            <p class="font-semibold text-slate-900 dark:text-white text-xs sm:text-sm">
+                                1. Seorang guru ingin mengajar materi sistem peredaran darah manusia pada siswa SMP. Karakteristik materi bersifat abstrak dan dinamis. Berdasarkan analisis kognitif, jenis media yang <strong>paling efektif</strong> untuk menjelaskan aliran darah adalah...
+                            </p>
+                            <div class="space-y-2 text-xs sm:text-sm">
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q1" value="A"> A. Modul cetak bergambar diam
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q1" value="B"> B. Animasi video 2D/3D interaktif
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q1" value="C"> C. Rekaman audio penjelasan guru
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q1" value="D"> D. Charta/poster dinding
+                                </label>
+                            </div>
+                            <div id="q1-feedback" class="hidden text-xs p-3 rounded-xl"></div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-3" id="q2-box">
+                            <p class="font-semibold text-slate-900 dark:text-white text-xs sm:text-sm">
+                                2. Perhatikan rumusan berikut: <em>"Siswa dapat menyebutkan organ-organ pencernaan manusia dengan tepat."</em><br>Unsur yang <strong>belum lengkap</strong> dalam rumusan tujuan pembelajaran di atas berdasarkan kaidah ABCD adalah...
+                            </p>
+                            <div class="space-y-2 text-xs sm:text-sm">
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q2" value="A"> A. Audience dan Degree
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q2" value="B"> B. Behavior dan Condition
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q2" value="C"> C. Condition (Belum ada kondisi/bantuan media)
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q2" value="D"> D. Audience dan Behavior
+                                </label>
+                            </div>
+                            <div id="q2-feedback" class="hidden text-xs p-3 rounded-xl"></div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-3" id="q3-box">
+                            <p class="font-semibold text-slate-900 dark:text-white text-xs sm:text-sm">
+                                3. Tahap pengumpulan data awal untuk mengetahui apakah peserta didik telah memiliki prasyarat pengetahuan sebelum media dipergunakan dinamakan...
+                            </p>
+                            <div class="space-y-2 text-xs sm:text-sm">
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q3" value="A"> A. Analisis Biaya (Cost Analysis)
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q3" value="B"> B. Analisis Kemampuan Awal (Entry Behavior Analysis)
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q3" value="C"> C. Analisis Kelayakan Media (Usability Test)
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 cursor-pointer transition-all">
+                                    <input type="radio" name="q3" value="D"> D. Evaluasi Sumatif (Summative Evaluation)
+                                </label>
+                            </div>
+                            <div id="q3-feedback" class="hidden text-xs p-3 rounded-xl"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button id="btn-submit-quiz" class="px-6 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs sm:text-sm hover:bg-blue-700 transition-all shadow-md">
+                            Periksa Jawaban
+                        </button>
+                        <button id="btn-reset-quiz" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-semibold text-xs sm:text-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition-all">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Daftar Pustaka -->
+            <section id="daftar-pustaka" class="scroll-mt-24">
+                <div class="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3 text-blue-600 dark:text-blue-400">
+                        <i class="fa-solid fa-book text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">9. Daftar Pustaka</h3>
+                    </div>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 divide-y divide-slate-100 dark:divide-slate-700/50">
+                        <li class="pt-2">Clark, R. C., & Mayer, R. E. (2016). <em>e-Learning and the Science of Instruction: Proven Guidelines for Consumers and Designers of Multimedia Learning</em>. John Wiley & Sons.</li>
+                        <li class="pt-2">Dick, W., Carey, L., & Carey, J. O. (2015). <em>The Systematic Design of Instruction</em> (8th ed.). Pearson.</li>
+                        <li class="pt-2">Smaldino, S. E., Lowther, D. L., & Russell, J. D. (2019). <em>Instructional Technology and Media for Learning</em> (12th ed.). Pearson.</li>
+                        <li class="pt-2">Krathwohl, D. R. (2002). A revision of Bloom's taxonomy: An overview. <em>Theory Into Practice</em>, 41(4), 212-218.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Notification Toast Container -->
+            <div id="toast" class="fixed bottom-6 right-6 px-4 py-3 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-2xl transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+                <span id="toast-msg">Pesan notifikasi</span>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render KaTeX Math
+            if (window.katex) {
+                katex.render("\\text{Tujuan Pembelajaran} = \\text{Audience (A)} + \\text{Behavior (B)} + \\text{Condition (C)} + \\text{Degree (D)}", 
+                    document.querySelector('.katex-render') || document.body
+                );
+            }
+
+            // Theme Toggle Logic
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            themeToggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            // Sidebar Mobile Toggle
+            const sidebarToggleBtn = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            sidebarToggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+            });
+
+            // Reading Progress Indicator
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('progress-bar').style.width = scrolled + '%';
+            });
+
+            // ABCD Simulator Updates
+            const simC = document.getElementById('sim-c');
+            const simA = document.getElementById('sim-a');
+            const simB = document.getElementById('sim-b');
+            const simD = document.getElementById('sim-d');
+
+            const outC = document.getElementById('out-c');
+            const outA = document.getElementById('out-a');
+            const outB = document.getElementById('out-b');
+            const outD = document.getElementById('out-d');
+
+            function updateSim() {
+                outC.textContent = simC.value || '[Condition]';
+                outA.textContent = simA.value || '[Audience]';
+                outB.textContent = simB.value || '[Behavior]';
+                outD.textContent = simD.value || '[Degree]';
+            }
+
+            [simC, simA, simB, simD].forEach(input => {
+                input.addEventListener('input', updateSim);
+            });
+            updateSim();
+
+            // Quiz Logic
+            const quizAnswers = {
+                q1: { ans: 'B', exp: 'Animasi video 2D/3D interaktif paling efektif memvisualisasikan aliran darah (proses abstrak & dinamis).' },
+                q2: { ans: 'C', exp: 'Rumusan tersebut belum memiliki Condition (C), yaitu bantuan/media saat diuji.' },
+                q3: { ans: 'B', exp: 'Analisis Kemampuan Awal (Entry Behavior Analysis) bertujuan mengukur prasyarat pengetahuan peserta didik.' }
+            };
+
+            const btnSubmitQuiz = document.getElementById('btn-submit-quiz');
+            const btnResetQuiz = document.getElementById('btn-reset-quiz');
+            const scoreBadge = document.getElementById('quiz-score-badge');
+
+            btnSubmitQuiz.addEventListener('click', () => {
+                let score = 0;
+                
+                Object.keys(quizAnswers).forEach((qKey, index) => {
+                    const selected = document.querySelector(`input[name="${qKey}"]:checked`);
+                    const feedbackBox = document.getElementById(`${qKey}-feedback`);
+                    feedbackBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-rose-100', 'text-rose-900');
+
+                    if (selected) {
+                        if (selected.value === quizAnswers[qKey].ans) {
+                            score += 10;
+                            feedbackBox.classList.add('bg-emerald-100', 'text-emerald-900', 'dark:bg-emerald-950/60', 'dark:text-emerald-200');
+                            feedbackBox.innerHTML = `<strong><i class="fa-solid fa-check-circle mr-1"></i> Benar!</strong> ${quizAnswers[qKey].exp}`;
+                        } else {
+                            feedbackBox.classList.add('bg-rose-100', 'text-rose-900', 'dark:bg-rose-950/60', 'dark:text-rose-200');
+                            feedbackBox.innerHTML = `<strong><i class="fa-solid fa-times-circle mr-1"></i> Kurang Tepat.</strong> Jawaban benar: ${quizAnswers[qKey].ans}. ${quizAnswers[qKey].exp}`;
+                        }
+                    } else {
+                        feedbackBox.classList.add('bg-amber-100', 'text-amber-900', 'dark:bg-amber-950/60', 'dark:text-amber-200');
+                        feedbackBox.innerHTML = `<strong><i class="fa-solid fa-triangle-exclamation mr-1"></i> Belum Dijawab.</strong> Jawaban benar: ${quizAnswers[qKey].ans}.`;
+                    }
+                });
+
+                scoreBadge.textContent = `Skor: ${score} / 30`;
+                scoreBadge.className = score === 30 ? 
+                    'px-3 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white' : 
+                    'px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white';
+                
+                showToast(`Tes Formatif Selesai! Skor Anda: ${score}/30`);
+            });
+
+            btnResetQuiz.addEventListener('click', () => {
+                ['q1', 'q2', 'q3'].forEach(qKey => {
+                    const radios = document.querySelectorAll(`input[name="${qKey}"]`);
+                    radios.forEach(r => r.checked = false);
+                    const fb = document.getElementById(`${qKey}-feedback`);
+                    fb.classList.add('hidden');
+                });
+                scoreBadge.textContent = 'Skor: 0 / 30';
+                scoreBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300';
+            });
+
+            // LKM Salin Hasil Functionality
+            const btnCopyLkm = document.getElementById('btn-copy-lkm');
+            btnCopyLkm.addEventListener('click', () => {
+                const mapel = document.getElementById('lkm-mapel').value || '-';
+                const kelas = document.getElementById('lkm-kelas').value || '-';
+                const sekolah = document.getElementById('lkm-sekolah').value || '-';
+                const usia = document.getElementById('lkm-usia').value || '-';
+                const entry = document.getElementById('lkm-entry').value || '-';
+                
+                const modals = [];
+                if (document.getElementById('modal-v').checked) modals.push('Visual');
+                if (document.getElementById('modal-a').checked) modals.push('Audio');
+                if (document.getElementById('modal-k').checked) modals.push('Kinestetik');
+
+                const akses = document.getElementById('lkm-akses').value || '-';
+                const tujuan = document.getElementById('lkm-tujuan').value || '-';
+                const a = document.getElementById('lkm-a').value || '-';
+                const b = document.getElementById('lkm-b').value || '-';
+                const c = document.getElementById('lkm-c').value || '-';
+                const d = document.getElementById('lkm-d').value || '-';
+                const j1 = document.getElementById('lkm-j1').value || '-';
+                const j2 = document.getElementById('lkm-j2').value || '-';
+
+                const formattedText = `=========================================
+LEMBAR KERJA MAHASISWA (LKM 01)
+Topik: Analisis Kebutuhan, Karakteristik Peserta Didik, & Tujuan Pembelajaran
+=========================================
+
+BAGIAN 1: IDENTITAS PERANCANGAN
+- Mata Pelajaran / Topik: ${mapel}
+- Sasaran Kelas / Jenjang: ${kelas}
+- Sekolah / Target Audien: ${sekolah}
+
+BAGIAN 2: MATRIKS PROFIL PESERTA DIDIK
+- Usia & Perkembangan Kognitif: ${usia}
+- Pengetahuan Awal (Entry Behavior): ${entry}
+- Dominasi Modalitas Belajar: ${modals.join(', ') || '-'}
+- Aksesibilitas Perangkat/Teknologi: ${akses}
+
+BAGIAN 3: PERUMUSAN TUJUAN PEMBELAJARAN (ABCD)
+- Tujuan Pembelajaran: ${tujuan}
+  * Audience (A): ${a}
+  * Behavior (B): ${b}
+  * Condition (C): ${c}
+  * Degree (D): ${d}
+
+BAGIAN 4: JUSTIFIKASI ANALISIS KEBUTUHAN MEDIA
+1. Mengapa materi butuh media (Gap Analysis)?
+   ${j1}
+
+2. Rekomendasi Bentuk Media & Alasan:
+   ${j2}
+=========================================`;
+
+                // Copy using textarea fallback
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = formattedText;
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextArea);
+
+                showToast('Hasil LKM berhasil disalin ke clipboard!');
+            });
+
+            // Toast Notification Helper
+            function showToast(message) {
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toast-msg');
+                toastMsg.textContent = message;
+                toast.classList.remove('opacity-0', 'pointer-events-none');
+                toast.classList.add('opacity-100');
+
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100');
+                    toast.classList.add('opacity-0', 'pointer-events-none');
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
